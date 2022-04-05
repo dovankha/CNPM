@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.1.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: May 28, 2021 at 08:04 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+-- Host: 127.0.0.1
+-- Generation Time: Apr 05, 2022 at 06:19 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `ptitfoodx`
 --
+CREATE DATABASE IF NOT EXISTS `ptitfoodx` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `ptitfoodx`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `db_category`
 --
 
+DROP TABLE IF EXISTS `db_category`;
 CREATE TABLE `db_category` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -47,16 +50,16 @@ CREATE TABLE `db_category` (
 --
 
 INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, `created_at`, `created_by`, `updated_at`, `updated_by`, `trash`, `status`) VALUES
-(25, 'Breakfast', 'breakfast', 1, 0, '0', '2021-05-10 10:00:20', '1', '2021-05-10 10:00:20', '1', 1, 1),
-(26, 'Món ăn trưa và tối', 'mon-an-trua-va-toi', 1, 0, '1', '2021-05-10 10:00:46', '1', '2021-05-10 10:05:50', '1', 1, 1),
-(27, 'Món ăn tối', 'mon-an-toi', 1, 0, '2', '2021-05-10 10:00:58', '1', '2021-05-10 10:00:58', '1', 0, 1),
-(28, 'Đồ ăn nhanh', 'do-an-nhanh', 2, 25, '3', '2021-05-10 10:01:38', '1', '2021-05-10 10:02:04', '1', 1, 1),
-(31, 'Thực phẩm từ sữa, trứng', 'thuc-pham-tu-sua-trung', 2, 25, '1', '2021-05-10 10:04:03', '1', '2021-05-10 10:04:03', '1', 1, 1),
-(32, 'Chế biến nhanh', 'che-bien-nhanh', 2, 25, '1', '2021-05-10 10:04:19', '1', '2021-05-10 10:04:19', '1', 1, 1),
-(33, 'Món mặn', 'mon-man', 2, 26, '2', '2021-05-10 10:05:36', '1', '2021-05-10 10:05:36', '1', 1, 1),
-(34, 'Món xào', 'mon-xao', 2, 26, '2', '2021-05-10 10:06:06', '1', '2021-05-10 10:06:06', '1', 1, 1),
-(35, 'Canh', 'canh', 2, 26, '2', '2021-05-10 10:06:30', '1', '2021-05-10 10:06:30', '1', 1, 1),
-(36, 'Thực phẩm ăn liền', 'thuc-pham-an-lien', 1, 0, '0', '2021-05-10 10:07:05', '1', '2021-05-10 10:07:05', '1', 1, 1);
+(25, 'Bữa sáng', 'breakfast', 1, 0, '0', '2022-03-10 10:00:20', '1', '2022-03-10 10:00:20', '1', 1, 1),
+(26, 'Món ăn trưa và tối', 'mon-an-trua-va-toi', 1, 0, '1', '2022-03-10 10:00:23', '1', '2022-03-10 10:00:23', '1', 1, 1),
+(27, 'Món ăn tối', 'mon-an-toi', 1, 0, '2', '2022-03-10 10:00:32', '1', '2022-03-10 10:00:32', '1', 0, 1),
+(28, 'Đồ ăn nhanh', 'do-an-nhanh', 2, 25, '3', '2022-03-10 10:01:45', '1', '2022-03-10 10:01:45', '1', 1, 1),
+(31, 'Thực phẩm từ sữa, trứng', 'thuc-pham-tu-sua-trung', 2, 25, '1', '2022-03-10 10:04:03', '1', '2022-03-10 10:04:03', '1', 1, 1),
+(32, 'Chế biến nhanh', 'che-bien-nhanh', 2, 25, '1', '2022-03-10 10:05:03', '1', '2022-03-10 10:05:03', '1', 1, 1),
+(33, 'Món mặn', 'mon-man', 2, 26, '2', '2022-03-10 10:06:07', '1', '2022-03-10 10:06:07', '1', 1, 1),
+(34, 'Món xào', 'mon-xao', 2, 26, '2', '2022-03-10 10:07:11', '1', '2022-03-10 10:07:11', '1', 1, 1),
+(35, 'Canh', 'canh', 2, 26, '2', '2022-03-10 10:08:18', '1', '2022-03-10 10:08:18', '1', 1, 1),
+(36, 'Thực phẩm ăn liền', 'thuc-pham-an-lien', 1, 0, '0', '2022-03-10 10:09:13', '1', '2022-03-10 10:09:13', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -64,6 +67,7 @@ INSERT INTO `db_category` (`id`, `name`, `link`, `level`, `parentid`, `orders`, 
 -- Table structure for table `db_config`
 --
 
+DROP TABLE IF EXISTS `db_config`;
 CREATE TABLE `db_config` (
   `id` int(11) NOT NULL,
   `mail_smtp` varchar(68) COLLATE utf8_unicode_ci NOT NULL,
@@ -79,7 +83,7 @@ CREATE TABLE `db_config` (
 --
 
 INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`, `priceShip`, `title`, `description`) VALUES
-(1, 'votheanh99@gmail.com', 'theanh99', 'votheanh99@gmail.com', '30000', 'Ptit Food', 'Chuỗi cửa hàng tiện lợi tại trường học');
+(1, 'dovankha.tlvn@gmail.com', 'dovankha0123@', 'dovankha.tlvn@gmail.com', '9900', 'Ptit Food', 'Căn tin PTIT');
 
 -- --------------------------------------------------------
 
@@ -87,6 +91,7 @@ INSERT INTO `db_config` (`id`, `mail_smtp`, `mail_smtp_password`, `mail_noreply`
 -- Table structure for table `db_contact`
 --
 
+DROP TABLE IF EXISTS `db_contact`;
 CREATE TABLE `db_contact` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -104,7 +109,7 @@ CREATE TABLE `db_contact` (
 --
 
 INSERT INTO `db_contact` (`id`, `title`, `phone`, `email`, `content`, `created_at`, `status`, `trash`, `fullname`) VALUES
-(11, '123', '0366384001', 'vtameocon@gmail.com', '123s', '2021/5/11', 1, 1, 'abdsfa');
+(11, '123', '0987654321', 'ducthangdt0@gmail.com', 'Help', '2022/03/01', 1, 1, 'Huỳnh Đức Thắng');
 
 -- --------------------------------------------------------
 
@@ -112,6 +117,7 @@ INSERT INTO `db_contact` (`id`, `title`, `phone`, `email`, `content`, `created_a
 -- Table structure for table `db_content`
 --
 
+DROP TABLE IF EXISTS `db_content`;
 CREATE TABLE `db_content` (
   `id` int(11) NOT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -132,8 +138,8 @@ CREATE TABLE `db_content` (
 --
 
 INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
-(10, 'HƯỚNG DẪN THANH TOÁN', 'huong-dan-thanh-toan', '', '<p><strong><em>Thanh to&aacute;n tiền mặt trực tiếp hoặc chuyển khoản momo 0366384001 - V&otilde; Thế Anh</em></strong></p>\r\n', 'h-ng-d-n-thanh-toan-online-thanh-toan.jpg', '2021-03-10 18:07:22', '70', '2021-05-12 21:30:32', '1', 1, 1),
-(12, 'Top 10 ứng dụng mua sắm online tốt nhất năm 2020 ', 'top-10-ung-dung-mua-sam-online-tot-nhat-nam-2020', '', '<p><strong>1. Lazada</strong></p>\r\n\r\n<p>Lazada một ứng dụng mua sắm trực tuyến tr&ecirc;n thiết bị di động gia nhập v&agrave;o thị trường Việt Nam v&agrave;o đầu năm 2012. Đ&acirc;y l&agrave; th&agrave;nh vi&ecirc;n của Lazada Group một trong những trung t&acirc;m mua sắm trực tuyến lớn tại Đ&ocirc;ng Nam &Aacute;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/popupapp-2016-v1-Copy.jpg\" style=\"height:469px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lazada mang đến cho kh&aacute;ch h&agrave;ng những trải nghiệm mua sắm v&ocirc; c&ugrave;ng tuyệt vời với nhiều mặt h&agrave;ng thuộc nhiều thương hiệu kh&aacute;c nhau tr&ecirc;n thế giới. K&egrave;m theo đ&oacute; l&agrave; giao diện dễ sử dụng v&agrave; giao h&agrave;ng nhanh ch&oacute;ng, tiết kiệm.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>2. Shopee</strong></p>\r\n\r\n<p>Shopee l&agrave; ứng dụng thu h&uacute;t lượng người d&ugrave;ng lớn nhất tr&ecirc;n thị trường hiện nay với hơn 40 triệu lượt tải về, hiện ứng dụng đang c&oacute; mặt ở 7 quốc gia như: Singapore, Th&aacute;i Lan, Việt Nam, Malaysia, Đ&agrave;i Loan, Indonesia v&agrave; Philippines.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/Sp-Copy.jpg\" style=\"height:515px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mua sắm tại Shopee bạn sẽ được hưởng nhiều ưu đ&atilde;i như: miễn ph&iacute; cước vận chuyển đối với đơn h&agrave;ng tr&ecirc;n 180.000 vnđ,&nbsp;ưu đ&atilde;i tặng sản phẩm cho kh&aacute;ch h&agrave;ng mới với gi&aacute; 0đ, t&iacute;ch hợp nhiều tr&ograve; chơi vui nhộn để săn xu đổi nhiều ưu đ&atilde;i hấp dẫn,&hellip;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>2. Tiki</strong></p>\r\n\r\n<p>Từ một trang web b&aacute;n s&aacute;ch đơn thuần, Tiki đang trở th&agrave;nh một đối thủ lớn của c&aacute;c trang thương mại điện tử kh&aacute;c.&nbsp;Độ phủ s&oacute;ng của Tiki trong thời gian qua tại thị trường Việt Nam khiến c&aacute;i t&ecirc;n n&agrave;y đ&atilde; qu&aacute; đỗi th&acirc;n&nbsp;thuộc.&nbsp;Tiki hiện cũng đang l&agrave; ứng dụng được người d&ugrave;ng t&igrave;m kiếm nhiều nhất, cho thấy sức h&uacute;t của Tiki l&agrave; mạnh mẽ đến như thế n&agrave;o. Nếu bạn đang c&oacute; nhu cầu mua h&agrave;ng n&oacute;i chung v&agrave; mua s&aacute;ch n&oacute;i ri&ecirc;ng th&igrave; Tiki ch&iacute;nh l&agrave; sự lựa chọn kh&ocirc;ng thể thiếu d&agrave;nh cho bạn.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/3-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-730x414.jpg\" style=\"height:414px; width:730px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>4. Sendo</strong></p>\r\n\r\n<p>Từ khi ứng dụng ra mắt, Sendo nổi l&ecirc;n như l&agrave; một trong những ứng dụng top đầu&nbsp;gi&uacute;p kh&aacute;ch an t&acirc;m khi mua sắm. Sendo đem lại cho bạn những trải nghiệm v&ocirc; c&ugrave;ng thu h&uacute;t, gi&uacute;p bạn c&oacute; cơ hội tiếp cận được rất nhiều mặt h&agrave;ng trải d&agrave;i từ c&ocirc;ng nghệ, thời trang, mỹ phẩm,&hellip; v&agrave;&nbsp;cập nhật li&ecirc;n tục c&aacute;c chương tr&igrave;nh khuyến m&atilde;i hấp dẫn, miễn ph&iacute; vận chuyển.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/4-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-1-Copy.jpg\" style=\"height:488px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>5. VinID</strong></p>\r\n\r\n<p>VinID l&agrave; ứng dụng&nbsp;b&aacute;n h&agrave;ng trực tuyến thuộc tập đo&agrave;n Vingroup, một si&ecirc;u thị online với h&agrave;ng trăm sản phẩm chất lượng của nhiều thương hiệu nổi tiếng.&nbsp;Tại VinID, bạn c&oacute; thể dễ d&agrave;ng mua sắm trực tuyến c&aacute;c sản phẩm chất lượng cao thuộc c&aacute;c thương hiệu của Vingroup như: Thực phẩm, rau củ tươi sống từ Vinmart, Smartphone, thiết bị điện từ từ Vinpro, nghỉ dưỡng, kh&aacute;ch sạn, resort,&hellip; c&ugrave;ng những chương tr&igrave;nh&nbsp;đến từ c&aacute;c nh&agrave; cung cấp kh&aacute;c, cũng như thanh to&aacute;n điện &ndash; nước &ndash; internet,&hellip; khiến cuộc sống của bạn tiện lợi v&agrave; th&ocirc;ng minh hơn.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/5-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-Copy.jpg\" style=\"height:423px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>6. WService</strong></p>\r\n\r\n<p>WService l&agrave; ứng dụng Mobile VIP Card đầu ti&ecirc;n tại Việt Nam được đầu tư bởi Tập đo&agrave;n Truyền th&ocirc;ng Nam Hương. Ứng dụng n&agrave;y được ra đời với sứ mệnh l&agrave; thay thế to&agrave;n bộ hệ thống thẻ VIP vật của c&aacute;c doanh nghiệp, kh&aacute;ch h&agrave;ng mua sắm kh&ocirc;ng cần đến những chiếc thẻ bất tiện d&ugrave; l&agrave; online hay trực tiếp tại c&aacute;c cửa h&agrave;ng đa ng&agrave;nh. &ldquo;Sinh sau đẻ muộn&rdquo;, WService c&oacute; nhiều lợi thế, kết hợp đầy đủ c&aacute;c t&iacute;nh năng để hỗ trợ qu&aacute; tr&igrave;nh mua sắm, l&agrave;m c&aacute;c kh&aacute;ch h&agrave;ng h&agrave;i l&ograve;ng như: t&igrave;m kiếm th&ocirc;ng minh, tr&ograve; chuyện trực tiếp với cửa h&agrave;ng, giao diện dễ sử dụng, xem nhận x&eacute;t v&agrave; đ&aacute;nh gi&aacute; thực,&hellip; Đặc biệt l&agrave; c&oacute; những lợi &iacute;ch đặc quyền&nbsp;khiến kh&aacute;ch h&agrave;ng &ldquo;m&ecirc; t&iacute;t&rdquo;:</p>\r\n\r\n<p>&ndash; Người ti&ecirc;u d&ugrave;ng đồng l&uacute;c trở th&agrave;nh kh&aacute;ch h&agrave;ng VIP của h&agrave;ng trăm thương hiệu tr&ecirc;n app</p>\r\n\r\n<p>&ndash; Mua sắm bất k&igrave; l&uacute;c n&agrave;o bạn cũng c&oacute; thể hưởng ưu đ&atilde;i theo hạng mức thẻ th&agrave;nh vi&ecirc;n, c&oacute; thể l&ecirc;n đến 30%.</p>\r\n\r\n<p>&ndash; T&iacute;ch điểm sau mỗi lần ti&ecirc;u d&ugrave;ng, đổi qu&agrave; tặng, voucher v&agrave; n&acirc;ng hạng mức thẻ để nhận nhiều hơn những ưu đ&atilde;i, mua sắm c&agrave;ng tiết kiệm.</p>\r\n\r\n<p>&ndash; Giới thiệu bạn b&egrave; sử dụng sẽ được hưởng 5% tiền thưởng sau mỗi h&oacute;a đơn.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/WS-Copy.jpeg\" style=\"height:600px; width:600px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>7. Chợ Tốt</strong></p>\r\n\r\n<p>Chợ Tốt l&agrave; một ứng dụng kết nối giữa người b&aacute;n v&agrave; người mua hiệu quả. Tại đ&acirc;y bạn được ph&eacute;p rao b&aacute;n m&agrave; kh&ocirc;ng phải mất bất kỳ khoản ph&iacute; n&agrave;o. Tại Chợ Tốt bạn c&oacute; thể li&ecirc;n hệ với người b&aacute;n h&agrave;ng bằng nhiều c&aacute;ch như gọi điện, nhắn tin v&agrave; qua email. Với Chợ Tốt, bạn dễ d&agrave;ng&nbsp;rao vặt miễn ph&iacute;, cập nhật li&ecirc;n tục c&aacute;c mặt h&agrave;ng v&agrave; gi&aacute; b&aacute;n,&nbsp;kho sản phẩm đa dạng như: xe, nh&agrave;, đồ điện, đồ ngoại thất,&hellip;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/ungdungmuasam5_20190918124202-Copy.png\" style=\"height:450px; width:600px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>8. Zalora</strong></p>\r\n\r\n<p>Zalora l&agrave; ứng dụng chuy&ecirc;n về c&aacute;c sản phẩm quần &aacute;o thời trang, phụ kiện, gi&agrave;y d&eacute;p, mỹ phẩm cho cả nam v&agrave; nữ. Zalora c&oacute; giao diện tối giản cho phi&ecirc;n bản thiết bị di động, v&igrave; thế bạn c&oacute; thể xem hơn 1000 thương hiệu h&agrave;ng đầu với hơn 50.000 sản phẩm; với bộ lọc th&ocirc;ng minh, lọc theo loại v&agrave; gi&aacute;, xem c&aacute;c sản phẩm h&agrave;ng đầu. Zalora lu&ocirc;n giảm gi&aacute; đặc biệt d&agrave;nh cho kh&aacute;ch h&agrave;ng th&acirc;n thiết v&agrave;&nbsp;bạn c&oacute; thể lưu nhanh ch&oacute;ng c&aacute;c sản phẩm bạn y&ecirc;u th&iacute;ch v&agrave;o &ldquo;Mục Y&ecirc;u Th&iacute;ch&rdquo;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/6-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-Copy.jpg\" style=\"height:423px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>8.</strong>&nbsp;<strong>Amazon</strong></p>\r\n\r\n<p>Nếu bạn c&oacute; nhu cầu mua h&agrave;ng quốc tế th&igrave; kh&ocirc;ng thể kh&ocirc;ng nhắc đến Amazon. Ứng dụng Amazon đ&atilde; thực sự rất th&agrave;nh c&ocirc;ng, nhận được nhiều lượt tải lớn từ c&aacute;c kh&aacute;ch h&agrave;ng tr&ecirc;n thế giới. Kh&aacute;ch h&agrave;ng c&oacute; thể mua sắm được h&agrave;ng triệu sản phẩm từ tất cả c&aacute;c thương hiệu nổi tiếng tr&ecirc;n to&agrave;n cầu. Amazon với nhiều tiện t&iacute;ch cho c&aacute;c kh&aacute;ch h&agrave;ng:</p>\r\n\r\n<p>&ndash; Chỉ cần sử dụng &ldquo;Voice Search&rdquo; để t&igrave;m kiếm sản phẩm theo đ&uacute;ng nhu cầu.</p>\r\n\r\n<p>&ndash; Khả năng qu&eacute;t m&atilde; vạch v&agrave; h&igrave;nh ảnh để so s&aacute;nh h&agrave;ng h&oacute;a v&agrave; kiểm tra gi&aacute; cả.</p>\r\n\r\n<p>&ndash; Kiểm tra c&aacute;c ưu đ&atilde;i hộp v&agrave;ng, bao gồm c&aacute;c giao dịch ưu đ&atilde;i trong ng&agrave;y.</p>\r\n\r\n<p>&ndash; Gửi v&agrave; chia sẻ c&aacute;c li&ecirc;n kết sản phẩm qua email, SMS, Facebook.</p>\r\n\r\n<p>&ndash; C&ocirc;ng nghệ quản l&yacute; đơn h&agrave;ng&nbsp;hiệu quả.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/ungdungmuasam6_20190918124239-Copy.png\" style=\"height:450px; width:600px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>10. AliExpress</strong></p>\r\n\r\n<p>AliExpress l&agrave; một ứng dụng mua sắm online trực thuộc tập đo&agrave;n Alibaba. AliExpress nổi tiếng với c&aacute;c mặt h&agrave;ng thời trang, phụ kiện c&ocirc;ng nghệ, thiết bị điện &ndash; điện tử với nhiều ph&acirc;n kh&uacute;c từ b&igrave;nh d&acirc;n đến cao cấp. Mua h&agrave;ng tại AliExpress c&oacute; thể miễn ph&iacute; vận chuyển hơn 75% sản phẩm,&nbsp;thanh to&aacute;n trực tuyến an to&agrave;n v&agrave; đảm bảo, hỗ trợ nhiều ng&ocirc;n ngữ kh&aacute;c nhau, hay bạn ho&agrave;n to&agrave;n c&oacute; thể thanh to&aacute;n cho m&oacute;n h&agrave;ng của m&igrave;nh với bất kỳ loại tiền tệ n&agrave;o&hellip;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/aliexpress-Copy.jpg\" style=\"height:394px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Hy vọng với 10&nbsp;ứng dụng mua sắm&nbsp;nổi bật&nbsp;tr&ecirc;n đ&acirc;y, bạn sẽ c&oacute; được những trải nghiệm mua sắm online thuận tiện, tiết kiệm,&nbsp;sở hữu những sản phẩm cực k&igrave; hấp dẫn với gi&aacute; ưu đ&atilde;i!</p>\r\n', 'WS.jpg', '2021-03-10 11:19:06', '1', '2021-03-10 11:19:06', '1', 1, 1);
+(10, 'HƯỚNG DẪN THANH TOÁN', 'huong-dan-thanh-toan', '', '<p><strong><em>Thanh to&aacute;n tiền mặt trực tiếp hoặc chuyển khoản momo 0366384001 - V&otilde; Thế Anh</em></strong></p>\r\n', 'h-ng-d-n-thanh-toan-online-thanh-toan.jpg', '2022-03-10 18:07:22', '70', '2022-05-12 21:30:32', '1', 1, 1),
+(12, 'Top 10 ứng dụng mua sắm online tốt nhất năm 2020 ', 'top-10-ung-dung-mua-sam-online-tot-nhat-nam-2020', '', '<p><strong>1. Lazada</strong></p>\r\n\r\n<p>Lazada một ứng dụng mua sắm trực tuyến tr&ecirc;n thiết bị di động gia nhập v&agrave;o thị trường Việt Nam v&agrave;o đầu năm 2012. Đ&acirc;y l&agrave; th&agrave;nh vi&ecirc;n của Lazada Group một trong những trung t&acirc;m mua sắm trực tuyến lớn tại Đ&ocirc;ng Nam &Aacute;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/popupapp-2016-v1-Copy.jpg\" style=\"height:469px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Lazada mang đến cho kh&aacute;ch h&agrave;ng những trải nghiệm mua sắm v&ocirc; c&ugrave;ng tuyệt vời với nhiều mặt h&agrave;ng thuộc nhiều thương hiệu kh&aacute;c nhau tr&ecirc;n thế giới. K&egrave;m theo đ&oacute; l&agrave; giao diện dễ sử dụng v&agrave; giao h&agrave;ng nhanh ch&oacute;ng, tiết kiệm.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>2. Shopee</strong></p>\r\n\r\n<p>Shopee l&agrave; ứng dụng thu h&uacute;t lượng người d&ugrave;ng lớn nhất tr&ecirc;n thị trường hiện nay với hơn 40 triệu lượt tải về, hiện ứng dụng đang c&oacute; mặt ở 7 quốc gia như: Singapore, Th&aacute;i Lan, Việt Nam, Malaysia, Đ&agrave;i Loan, Indonesia v&agrave; Philippines.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/Sp-Copy.jpg\" style=\"height:515px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Mua sắm tại Shopee bạn sẽ được hưởng nhiều ưu đ&atilde;i như: miễn ph&iacute; cước vận chuyển đối với đơn h&agrave;ng tr&ecirc;n 180.000 vnđ,&nbsp;ưu đ&atilde;i tặng sản phẩm cho kh&aacute;ch h&agrave;ng mới với gi&aacute; 0đ, t&iacute;ch hợp nhiều tr&ograve; chơi vui nhộn để săn xu đổi nhiều ưu đ&atilde;i hấp dẫn,&hellip;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>2. Tiki</strong></p>\r\n\r\n<p>Từ một trang web b&aacute;n s&aacute;ch đơn thuần, Tiki đang trở th&agrave;nh một đối thủ lớn của c&aacute;c trang thương mại điện tử kh&aacute;c.&nbsp;Độ phủ s&oacute;ng của Tiki trong thời gian qua tại thị trường Việt Nam khiến c&aacute;i t&ecirc;n n&agrave;y đ&atilde; qu&aacute; đỗi th&acirc;n&nbsp;thuộc.&nbsp;Tiki hiện cũng đang l&agrave; ứng dụng được người d&ugrave;ng t&igrave;m kiếm nhiều nhất, cho thấy sức h&uacute;t của Tiki l&agrave; mạnh mẽ đến như thế n&agrave;o. Nếu bạn đang c&oacute; nhu cầu mua h&agrave;ng n&oacute;i chung v&agrave; mua s&aacute;ch n&oacute;i ri&ecirc;ng th&igrave; Tiki ch&iacute;nh l&agrave; sự lựa chọn kh&ocirc;ng thể thiếu d&agrave;nh cho bạn.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/3-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-730x414.jpg\" style=\"height:414px; width:730px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>4. Sendo</strong></p>\r\n\r\n<p>Từ khi ứng dụng ra mắt, Sendo nổi l&ecirc;n như l&agrave; một trong những ứng dụng top đầu&nbsp;gi&uacute;p kh&aacute;ch an t&acirc;m khi mua sắm. Sendo đem lại cho bạn những trải nghiệm v&ocirc; c&ugrave;ng thu h&uacute;t, gi&uacute;p bạn c&oacute; cơ hội tiếp cận được rất nhiều mặt h&agrave;ng trải d&agrave;i từ c&ocirc;ng nghệ, thời trang, mỹ phẩm,&hellip; v&agrave;&nbsp;cập nhật li&ecirc;n tục c&aacute;c chương tr&igrave;nh khuyến m&atilde;i hấp dẫn, miễn ph&iacute; vận chuyển.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/4-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-1-Copy.jpg\" style=\"height:488px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>5. VinID</strong></p>\r\n\r\n<p>VinID l&agrave; ứng dụng&nbsp;b&aacute;n h&agrave;ng trực tuyến thuộc tập đo&agrave;n Vingroup, một si&ecirc;u thị online với h&agrave;ng trăm sản phẩm chất lượng của nhiều thương hiệu nổi tiếng.&nbsp;Tại VinID, bạn c&oacute; thể dễ d&agrave;ng mua sắm trực tuyến c&aacute;c sản phẩm chất lượng cao thuộc c&aacute;c thương hiệu của Vingroup như: Thực phẩm, rau củ tươi sống từ Vinmart, Smartphone, thiết bị điện từ từ Vinpro, nghỉ dưỡng, kh&aacute;ch sạn, resort,&hellip; c&ugrave;ng những chương tr&igrave;nh&nbsp;đến từ c&aacute;c nh&agrave; cung cấp kh&aacute;c, cũng như thanh to&aacute;n điện &ndash; nước &ndash; internet,&hellip; khiến cuộc sống của bạn tiện lợi v&agrave; th&ocirc;ng minh hơn.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/5-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-Copy.jpg\" style=\"height:423px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>6. WService</strong></p>\r\n\r\n<p>WService l&agrave; ứng dụng Mobile VIP Card đầu ti&ecirc;n tại Việt Nam được đầu tư bởi Tập đo&agrave;n Truyền th&ocirc;ng Nam Hương. Ứng dụng n&agrave;y được ra đời với sứ mệnh l&agrave; thay thế to&agrave;n bộ hệ thống thẻ VIP vật của c&aacute;c doanh nghiệp, kh&aacute;ch h&agrave;ng mua sắm kh&ocirc;ng cần đến những chiếc thẻ bất tiện d&ugrave; l&agrave; online hay trực tiếp tại c&aacute;c cửa h&agrave;ng đa ng&agrave;nh. &ldquo;Sinh sau đẻ muộn&rdquo;, WService c&oacute; nhiều lợi thế, kết hợp đầy đủ c&aacute;c t&iacute;nh năng để hỗ trợ qu&aacute; tr&igrave;nh mua sắm, l&agrave;m c&aacute;c kh&aacute;ch h&agrave;ng h&agrave;i l&ograve;ng như: t&igrave;m kiếm th&ocirc;ng minh, tr&ograve; chuyện trực tiếp với cửa h&agrave;ng, giao diện dễ sử dụng, xem nhận x&eacute;t v&agrave; đ&aacute;nh gi&aacute; thực,&hellip; Đặc biệt l&agrave; c&oacute; những lợi &iacute;ch đặc quyền&nbsp;khiến kh&aacute;ch h&agrave;ng &ldquo;m&ecirc; t&iacute;t&rdquo;:</p>\r\n\r\n<p>&ndash; Người ti&ecirc;u d&ugrave;ng đồng l&uacute;c trở th&agrave;nh kh&aacute;ch h&agrave;ng VIP của h&agrave;ng trăm thương hiệu tr&ecirc;n app</p>\r\n\r\n<p>&ndash; Mua sắm bất k&igrave; l&uacute;c n&agrave;o bạn cũng c&oacute; thể hưởng ưu đ&atilde;i theo hạng mức thẻ th&agrave;nh vi&ecirc;n, c&oacute; thể l&ecirc;n đến 30%.</p>\r\n\r\n<p>&ndash; T&iacute;ch điểm sau mỗi lần ti&ecirc;u d&ugrave;ng, đổi qu&agrave; tặng, voucher v&agrave; n&acirc;ng hạng mức thẻ để nhận nhiều hơn những ưu đ&atilde;i, mua sắm c&agrave;ng tiết kiệm.</p>\r\n\r\n<p>&ndash; Giới thiệu bạn b&egrave; sử dụng sẽ được hưởng 5% tiền thưởng sau mỗi h&oacute;a đơn.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/WS-Copy.jpeg\" style=\"height:600px; width:600px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>7. Chợ Tốt</strong></p>\r\n\r\n<p>Chợ Tốt l&agrave; một ứng dụng kết nối giữa người b&aacute;n v&agrave; người mua hiệu quả. Tại đ&acirc;y bạn được ph&eacute;p rao b&aacute;n m&agrave; kh&ocirc;ng phải mất bất kỳ khoản ph&iacute; n&agrave;o. Tại Chợ Tốt bạn c&oacute; thể li&ecirc;n hệ với người b&aacute;n h&agrave;ng bằng nhiều c&aacute;ch như gọi điện, nhắn tin v&agrave; qua email. Với Chợ Tốt, bạn dễ d&agrave;ng&nbsp;rao vặt miễn ph&iacute;, cập nhật li&ecirc;n tục c&aacute;c mặt h&agrave;ng v&agrave; gi&aacute; b&aacute;n,&nbsp;kho sản phẩm đa dạng như: xe, nh&agrave;, đồ điện, đồ ngoại thất,&hellip;</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/ungdungmuasam5_20190918124202-Copy.png\" style=\"height:450px; width:600px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>8. Zalora</strong></p>\r\n\r\n<p>Zalora l&agrave; ứng dụng chuy&ecirc;n về c&aacute;c sản phẩm quần &aacute;o thời trang, phụ kiện, gi&agrave;y d&eacute;p, mỹ phẩm cho cả nam v&agrave; nữ. Zalora c&oacute; giao diện tối giản cho phi&ecirc;n bản thiết bị di động, v&igrave; thế bạn c&oacute; thể xem hơn 1000 thương hiệu h&agrave;ng đầu với hơn 50.000 sản phẩm; với bộ lọc th&ocirc;ng minh, lọc theo loại v&agrave; gi&aacute;, xem c&aacute;c sản phẩm h&agrave;ng đầu. Zalora lu&ocirc;n giảm gi&aacute; đặc biệt d&agrave;nh cho kh&aacute;ch h&agrave;ng th&acirc;n thiết v&agrave;&nbsp;bạn c&oacute; thể lưu nhanh ch&oacute;ng c&aacute;c sản phẩm bạn y&ecirc;u th&iacute;ch v&agrave;o &ldquo;Mục Y&ecirc;u Th&iacute;ch&rdquo;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/6-Top-7-app-ban-hang-online-thanh-cong-nhat-viet-nam-2019-Copy.jpg\" style=\"height:423px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>8.</strong>&nbsp;<strong>Amazon</strong></p>\r\n\r\n<p>Nếu bạn c&oacute; nhu cầu mua h&agrave;ng quốc tế th&igrave; kh&ocirc;ng thể kh&ocirc;ng nhắc đến Amazon. Ứng dụng Amazon đ&atilde; thực sự rất th&agrave;nh c&ocirc;ng, nhận được nhiều lượt tải lớn từ c&aacute;c kh&aacute;ch h&agrave;ng tr&ecirc;n thế giới. Kh&aacute;ch h&agrave;ng c&oacute; thể mua sắm được h&agrave;ng triệu sản phẩm từ tất cả c&aacute;c thương hiệu nổi tiếng tr&ecirc;n to&agrave;n cầu. Amazon với nhiều tiện t&iacute;ch cho c&aacute;c kh&aacute;ch h&agrave;ng:</p>\r\n\r\n<p>&ndash; Chỉ cần sử dụng &ldquo;Voice Search&rdquo; để t&igrave;m kiếm sản phẩm theo đ&uacute;ng nhu cầu.</p>\r\n\r\n<p>&ndash; Khả năng qu&eacute;t m&atilde; vạch v&agrave; h&igrave;nh ảnh để so s&aacute;nh h&agrave;ng h&oacute;a v&agrave; kiểm tra gi&aacute; cả.</p>\r\n\r\n<p>&ndash; Kiểm tra c&aacute;c ưu đ&atilde;i hộp v&agrave;ng, bao gồm c&aacute;c giao dịch ưu đ&atilde;i trong ng&agrave;y.</p>\r\n\r\n<p>&ndash; Gửi v&agrave; chia sẻ c&aacute;c li&ecirc;n kết sản phẩm qua email, SMS, Facebook.</p>\r\n\r\n<p>&ndash; C&ocirc;ng nghệ quản l&yacute; đơn h&agrave;ng&nbsp;hiệu quả.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/ungdungmuasam6_20190918124239-Copy.png\" style=\"height:450px; width:600px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>10. AliExpress</strong></p>\r\n\r\n<p>AliExpress l&agrave; một ứng dụng mua sắm online trực thuộc tập đo&agrave;n Alibaba. AliExpress nổi tiếng với c&aacute;c mặt h&agrave;ng thời trang, phụ kiện c&ocirc;ng nghệ, thiết bị điện &ndash; điện tử với nhiều ph&acirc;n kh&uacute;c từ b&igrave;nh d&acirc;n đến cao cấp. Mua h&agrave;ng tại AliExpress c&oacute; thể miễn ph&iacute; vận chuyển hơn 75% sản phẩm,&nbsp;thanh to&aacute;n trực tuyến an to&agrave;n v&agrave; đảm bảo, hỗ trợ nhiều ng&ocirc;n ngữ kh&aacute;c nhau, hay bạn ho&agrave;n to&agrave;n c&oacute; thể thanh to&aacute;n cho m&oacute;n h&agrave;ng của m&igrave;nh với bất kỳ loại tiền tệ n&agrave;o&hellip;.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><img alt=\"\" src=\"https://womenleadersforum.vn/wp-content/uploads/2020/03/aliexpress-Copy.jpg\" style=\"height:394px; width:700px\" /></p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Hy vọng với 10&nbsp;ứng dụng mua sắm&nbsp;nổi bật&nbsp;tr&ecirc;n đ&acirc;y, bạn sẽ c&oacute; được những trải nghiệm mua sắm online thuận tiện, tiết kiệm,&nbsp;sở hữu những sản phẩm cực k&igrave; hấp dẫn với gi&aacute; ưu đ&atilde;i!</p>\r\n', 'WS.jpg', '2022-03-10 11:19:06', '1', '2022-03-10 11:19:06', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -141,6 +147,7 @@ INSERT INTO `db_content` (`id`, `title`, `alias`, `introtext`, `fulltext`, `img`
 -- Table structure for table `db_customer`
 --
 
+DROP TABLE IF EXISTS `db_customer`;
 CREATE TABLE `db_customer` (
   `id` int(11) NOT NULL,
   `fullname` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -159,12 +166,7 @@ CREATE TABLE `db_customer` (
 --
 
 INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `address`, `phone`, `email`, `created`, `trash`, `status`) VALUES
-(78, 'Vo The Anh', 'vtameocon', 'e10adc3949ba59abbe56e057f20f883e', '', '0366384001', 'vtameocon@gmail.com', '2021-05-06 00:00:00', 1, 1),
-(79, 'Vo The Anh', 'vtameocon1', 'e10adc3949ba59abbe56e057f20f883e', '', '0366384002', 'saigonese.bmt7@gmail.com', '2021-05-10 00:00:00', 1, 1),
-(80, 'Vo The Anh', 'vtameocon3', 'e10adc3949ba59abbe56e057f20f883e', '', '0366384003', 'lovevnbesaba@gmail.com', '2021-05-10 00:00:00', 1, 1),
-(81, 'Vo The Anh', 'vtameocon4', 'e10adc3949ba59abbe56e057f20f883e', '', '0366384004', 'nn18dcat005@student.ptithcm.edu.vn', '2021-05-10 00:00:00', 1, 1),
-(82, 'Vo The Anh', 'vtameocon5', 'e10adc3949ba59abbe56e057f20f883e', '', '0366384005', 'hungvodaklak63@gmail.com', '2021-05-10 00:00:00', 1, 1),
-(83, 'Vo The Anh', '', '', '', '+84366384001', '', '2021-05-12 14:13:52', 1, 1);
+(84, 'ĐỖ VĂN KHA', 'dovankha', '36924c298f2176c55166976d2b8807b7', '', '0987654321', 'dovankha.tlvn@gmail.com', '2022-03-27 00:00:00', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -172,6 +174,7 @@ INSERT INTO `db_customer` (`id`, `fullname`, `username`, `password`, `address`, 
 -- Table structure for table `db_discount`
 --
 
+DROP TABLE IF EXISTS `db_discount`;
 CREATE TABLE `db_discount` (
   `id` int(11) NOT NULL COMMENT 'ID',
   `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Mã giảm giá',
@@ -192,17 +195,9 @@ CREATE TABLE `db_discount` (
 --
 
 INSERT INTO `db_discount` (`id`, `code`, `discount`, `limit_number`, `number_used`, `expiration_date`, `payment_limit`, `description`, `created`, `orders`, `trash`, `status`) VALUES
-(1, 'MAHETLUOT', 100000, 30, 30, '2021-09-29', 500000, 'Giam 100000', '2021-03-10', 1, 0, 1),
-(2, 'VANHIEP', 200000, 20, 3, '2021-06-12', 500000, 'Giam 200k', '2021-03-10', 1, 0, 1),
-(3, 'VANHIEP123', 200000, 300, 103, '2021-07-20', 300000, 'giảm 200k', '2021-03-10', 1, 0, 1),
-(4, 'MAHETHAN', 150000, 68, 23, '2021-06-30', 500000, 'giảm 300k', '2021-03-10', 1, 0, 1),
-(13, 'CAOTHANG', 150000, 200, 0, '2021-07-26', 100000, 'Giảm 150k', '2021-03-10', 1, 0, 1),
-(18, 'DANAVTC', 50000, 10, 0, '2021-05-12', 10000, 'Khuyễn Mãi', '2021-03-10', 1, 0, 1),
-(27, 'EXPX5IIF4KNK', 100000, 1, 0, '2021-06-06', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2021-03-10', 0, 1, 1),
-(28, 'AUZOYJEZB1KC', 100000, 1, 0, '2021-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2021-05-10', 0, 1, 1),
-(29, '930IWPNQCEP2', 100000, 1, 0, '2021-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2021-05-10', 0, 1, 1),
-(30, 'H2U4OSXHDTIG', 100000, 1, 0, '2021-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2021-05-10', 0, 1, 1),
-(31, 'TMJOSBCP1VEG', 100000, 1, 0, '2021-06-10', 0, 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công', '2021-05-10', 0, 1, 1);
+(13, 'CAOTHANG', 150000, 200, 0, '2022-03-26', 100000, 'Giảm 150k', '2022-03-10', 1, 0, 1),
+(18, 'DANAVTC', 50000, 10, 0, '2022-03-26', 10000, 'Khuyễn Mãi', '2022-03-10', 1, 0, 1),
+(32, 'MAIMAI', 50000, 1, 0, '2022-04-27', 9999, 'Mã giảm giá 50.000 đ tự động khi đăng ký thành công', '2022-03-27', 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -210,6 +205,7 @@ INSERT INTO `db_discount` (`id`, `code`, `discount`, `limit_number`, `number_use
 -- Table structure for table `db_district`
 --
 
+DROP TABLE IF EXISTS `db_district`;
 CREATE TABLE `db_district` (
   `id` int(5) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -942,6 +938,7 @@ INSERT INTO `db_district` (`id`, `name`, `type`, `provinceid`) VALUES
 -- Table structure for table `db_order`
 --
 
+DROP TABLE IF EXISTS `db_order`;
 CREATE TABLE `db_order` (
   `id` int(11) NOT NULL,
   `orderCode` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
@@ -959,12 +956,21 @@ CREATE TABLE `db_order` (
   `status` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `db_order`
+--
+
+INSERT INTO `db_order` (`id`, `orderCode`, `customerid`, `orderdate`, `fullname`, `phone`, `money`, `price_ship`, `coupon`, `province`, `district`, `address`, `trash`, `status`) VALUES
+(104, 'PzoebSdV', 84, '2022-03-27 15:43:10', 'ĐỖ VĂN KHA', '0987654321', 45000, 30000, 0, 79, 763, '97 Man Thiện', 1, 0),
+(105, 'ZUkRJnaG', 84, '2022-03-27 16:26:51', 'ĐỖ VĂN KHA', '0987654321', 60000, 30000, 0, 77, 752, '850 Hoàng Văn Thụ', 1, 0);
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `db_orderdetail`
 --
 
+DROP TABLE IF EXISTS `db_orderdetail`;
 CREATE TABLE `db_orderdetail` (
   `id` int(11) NOT NULL,
   `orderid` int(11) NOT NULL,
@@ -975,12 +981,21 @@ CREATE TABLE `db_orderdetail` (
   `status` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `db_orderdetail`
+--
+
+INSERT INTO `db_orderdetail` (`id`, `orderid`, `productid`, `count`, `price`, `trash`, `status`) VALUES
+(130, 104, 63, 1, 15000, 1, 1),
+(131, 105, 63, 2, 15000, 1, 1);
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `db_producer`
 --
 
+DROP TABLE IF EXISTS `db_producer`;
 CREATE TABLE `db_producer` (
   `id` int(10) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -999,9 +1014,9 @@ CREATE TABLE `db_producer` (
 --
 
 INSERT INTO `db_producer` (`id`, `name`, `code`, `keyword`, `created_at`, `created_by`, `modified`, `modified_by`, `status`, `trash`) VALUES
-(1, 'Đà Nẵng - Dana', 'DANAVTC', 'Da Nang', '2021-05-01 16:08:31', 4, '2021-05-01 16:19:16', 1, 1, 1),
-(2, 'Nhà cung cấp Gò Vấp', 'GOVAPPRODUCER', 'Gò Vấp ', '2021-05-01 23:30:37', 1, '2020-10-05 16:18:48', 1, 1, 1),
-(3, 'Công Ti cổ phần THEA', 'THEA', 'Thea', '2021-05-01 16:06:31', 4, '2020-10-05 16:19:38', 1, 1, 1);
+(1, 'Đà Nẵng - Dana', 'DANAVTC', 'Da Nang', '2022-03-01 16:08:31', 4, '2022-03-01 16:19:16', 1, 1, 1),
+(2, 'Nhà cung cấp Gò Vấp', 'GOVAPPRODUCER', 'Gò Vấp ', '2022-03-01 23:30:37', 1, '2022-03-05 16:18:48', 1, 1, 1),
+(3, 'Công Ti cổ phần SATRAFOOD', 'SATRA', 'satrafood', '2022-03-01 16:06:31', 4, '2022-04-05 11:13:14', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1009,6 +1024,7 @@ INSERT INTO `db_producer` (`id`, `name`, `code`, `keyword`, `created_at`, `creat
 -- Table structure for table `db_product`
 --
 
+DROP TABLE IF EXISTS `db_product`;
 CREATE TABLE `db_product` (
   `id` int(11) NOT NULL,
   `catid` int(11) NOT NULL,
@@ -1037,9 +1053,9 @@ CREATE TABLE `db_product` (
 --
 
 INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sortDesc`, `detail`, `producer`, `number`, `number_buy`, `sale`, `price`, `price_sale`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
-(63, 32, 'Bánh mì thịt nướng', 'banh-mi-thit-nuong', 'banhmithit.jpg', 'banhmithit#xoixeo', 'Bánh mì thịt cho mọi sinh viên giá rẻ phù hợp.', '<p>B&aacute;nh m&igrave; thịt l&agrave; loại đồ ăn kh&ocirc; khan, ăn dễ mắc nghẹn nhưng v&igrave; rẻ v&agrave; chế biến nhanh n&ecirc;n rất được sinh vi&ecirc;n ưa chuộng. Mua ngay 10 c&aacute;i trở l&ecirc;n được freeship tận ph&ograve;ng.</p>\r\n', 3, 1000, 5, 0, 15000, 15000, '2021-05-10 10:13:32', '1', '2021-05-10 10:13:32', '1', 1, 1),
-(77, 26, 'àdsa', 'adsa', 'xoiman.jpg', 'xoiman.jpg#xoiman.jpg#', 'ádf', '<p>123</p>\r\n', 1, 1, 0, 0, 12, 12, '2021-05-10 19:10:46', '1', '2021-05-10 19:10:46', '1', 1, 1),
-(78, 32, 'hehe', 'hehe', 'xoixeo.jpg', 'xoixeo.jpg#xoixeo.jpg#xoixeo.jpg', 'hehe', '<p>hehe</p>\r\n', 2, 1, 0, 0, 12, 12, '2021-05-10 19:14:13', '1', '2021-05-10 19:14:13', '1', 1, 1);
+(63, 32, 'Bánh mì thịt nướng', 'banh-mi-thit-nuong', 'banhmithit.jpg', 'banhmithit#xoixeo', 'Bánh mì thịt cho mọi sinh viên giá rẻ phù hợp.', '<p>B&aacute;nh m&igrave; thịt l&agrave; loại đồ ăn kh&ocirc; khan, ăn dễ mắc nghẹn nhưng v&igrave; rẻ v&agrave; chế biến nhanh n&ecirc;n rất được sinh vi&ecirc;n ưa chuộng. Mua ngay 10 c&aacute;i trở l&ecirc;n được freeship tận ph&ograve;ng.</p>\r\n', 3, 1000, 5, 0, 15000, 15000, '2022-03-10 10:13:32', '1', '2022-03-11 10:13:32', '1', 1, 1),
+(77, 26, 'àdsa', 'adsa', 'xoiman.jpg', 'xoiman.jpg#xoiman.jpg#', 'ádf', '<p>123</p>\r\n', 1, 1, 0, 0, 12, 12, '2022-03-10 19:10:46', '1', '2022-03-11 19:10:46', '1', 1, 1),
+(78, 32, 'hehe', 'hehe', 'xoixeo.jpg', 'xoixeo.jpg#xoixeo.jpg#xoixeo.jpg', 'hehe', '<p>hehe</p>\r\n', 2, 1, 0, 0, 12, 12, '2022-03-10 19:14:13', '1', '2022-03-11 19:14:13', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1047,6 +1063,7 @@ INSERT INTO `db_product` (`id`, `catid`, `name`, `alias`, `avatar`, `img`, `sort
 -- Table structure for table `db_province`
 --
 
+DROP TABLE IF EXISTS `db_province`;
 CREATE TABLE `db_province` (
   `id` int(5) NOT NULL,
   `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
@@ -1128,6 +1145,7 @@ INSERT INTO `db_province` (`id`, `name`, `type`) VALUES
 -- Table structure for table `db_slider`
 --
 
+DROP TABLE IF EXISTS `db_slider`;
 CREATE TABLE `db_slider` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -1146,7 +1164,7 @@ CREATE TABLE `db_slider` (
 --
 
 INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `status`) VALUES
-(11, 'banner1', 'banner1', 'banner1.jpg', '2021-05-12 21:32:35', '1', '2021-05-12 21:32:35', '1', 1, 1);
+(11, 'banner1', 'banner1', 'banner1.jpg', '2022-03-08 21:32:35', '1', '2022-03-08 21:32:35', '1', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1154,6 +1172,7 @@ INSERT INTO `db_slider` (`id`, `name`, `link`, `img`, `created`, `created_by`, `
 -- Table structure for table `db_user`
 --
 
+DROP TABLE IF EXISTS `db_user`;
 CREATE TABLE `db_user` (
   `id` int(11) NOT NULL,
   `fullname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -1175,7 +1194,7 @@ CREATE TABLE `db_user` (
 --
 
 INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`, `gender`, `phone`, `address`, `img`, `created`, `trash`, `status`) VALUES
-(1, 'admin', 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'admin@gmail.com', 1, '0923217268', 'Buôn Ma Thuột', 'user-group.png', '2021-04-02 09:16:16', 1, 1);
+(1, 'admin', 'admin', '7c4a8d09ca3762af61e59520943dc26494f8941b', 1, 'admin@gmail.com', 1, '0923217268', 'Bình Định', 'user-group.png', '2022-01-03 09:16:16', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1183,6 +1202,7 @@ INSERT INTO `db_user` (`id`, `fullname`, `username`, `password`, `role`, `email`
 -- Table structure for table `db_usergroup`
 --
 
+DROP TABLE IF EXISTS `db_usergroup`;
 CREATE TABLE `db_usergroup` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -1200,8 +1220,8 @@ CREATE TABLE `db_usergroup` (
 --
 
 INSERT INTO `db_usergroup` (`id`, `name`, `created`, `created_by`, `modified`, `modified_by`, `trash`, `access`, `status`) VALUES
-(1, 'Toàn quyền', '2019-05-14 23:29:15', 1, '2019-05-14 23:29:15', 4, 1, 1, 1),
-(2, 'Nhân viên', '2019-05-14 23:29:21', 1, '2019-05-14 23:29:21', 4, 1, 1, 1);
+(1, 'Toàn quyền', '2022-03-01 23:29:15', 1, '2022-03-01 23:29:15', 4, 1, 1, 1),
+(2, 'Nhân viên', '2022-03-01 23:29:21', 1, '2022-03-01 23:29:21', 4, 1, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -1342,25 +1362,25 @@ ALTER TABLE `db_content`
 -- AUTO_INCREMENT for table `db_customer`
 --
 ALTER TABLE `db_customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `db_discount`
 --
 ALTER TABLE `db_discount`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID', AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `db_order`
 --
 ALTER TABLE `db_order`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `db_orderdetail`
 --
 ALTER TABLE `db_orderdetail`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=132;
 
 --
 -- AUTO_INCREMENT for table `db_producer`
