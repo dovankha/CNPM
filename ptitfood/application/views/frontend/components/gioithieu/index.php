@@ -1,5 +1,5 @@
 <center>
-	<h3>• Website đồ án môn CNPT được chạy trên localhost <br />
+	<h3>• Website đồ án môn CÔNG NGHỆ PHẦN MỀM được chạy trên localhost <br />
 		Tên đồ án: PTITFOODX <br />
 		• Được thực hiện bởi sinh viên:
 		<br />
