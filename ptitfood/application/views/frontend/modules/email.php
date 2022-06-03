@@ -1,8 +1,7 @@
 <html>
-
 <body>
 	<div style="color: #000;">
-		<p>Xin chào <?php echo $customer['fullname'] ?>,</p>
+		<p>Xin chào <?php echo $customer['fullname']?>,</p>
 		<p>Cảm ơn Quý khách đã đặt hàng tại <strong>PTITFOOD</strong>!</p>
 		<p>Đơn hàng của Quý khách đã được tiếp nhận, nhân viên của hệ thống sẽ nhanh chóng liên hệ với Quý khách trong thời gian sớm nhất.</p>
 		<div>
@@ -28,7 +27,7 @@
 									<tr>
 										<td>Địa chỉ:</td>
 										<td>
-											<?php echo $order['address'] ?>, <?php echo $district; ?>, <?php echo $province; ?>
+											<?php echo $order['address'] ?>, <?php echo $district; ?>, <?php echo $province; ?> 
 										</td>
 									</tr>
 								</tbody>
@@ -58,20 +57,20 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php
+					<?php 
 					$total = 0;
-					foreach ($orderDetail as $value) : ?>
+					foreach ($orderDetail as $value) :?>
 						<tr style="border:1px solid #d7d7d7">
 							<td><?php echo $value['name']; ?></td>
 							<td style="text-align:center;padding:5px 10px"><?php echo $value['count'] ?></td>
 							<td style="padding:5px 10px;text-align:center;"><?php echo number_format($value['priceorder']) ?> VNĐ</td>
 							<td style="padding:5px 10px;text-align:right">
-								<?php
+								<?php 
 								$price = $value['priceorder'] * $value['count'];
 								echo number_format($price);
 								$total += $price;
 								?>
-								VNĐ</td>
+							VNĐ</td>
 						</tr>
 
 					<?php endforeach; ?>
@@ -103,9 +102,8 @@
 				</tbody>
 			</table>
 		</div>
-		<p><strong>Hình thức thanh toán: </strong>Thanh toán khi nhận hàng (COD).</p>
+		<p><strong>Hình thức thanh toán: </strong>Thanh toán khi giao hàng (COD)</p>
 	</div>
-	</div>
+</div>
 </body>
-
 </html>

@@ -177,7 +177,7 @@ for ($i=1; $i <= 12 ; $i++)
     ]);
 
     var options = {
-      title: 'Số lượng bán ra từ 01/2021 - 12/2021',
+      title: 'Số lượng bán ra từ 01/2022 - 12/2022',
       seriesType: 'bars'
     };
 

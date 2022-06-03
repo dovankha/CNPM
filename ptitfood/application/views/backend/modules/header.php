@@ -10,8 +10,8 @@
             <ul class="nav navbar-nav" style="height: 52px;  padding: 1px">
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <i class="fa fa-bell-o"></i>
-                      <span class="label label-warning">
+                      <i style="margin-right:10px;"class="fa fa-bell-o">Thông báo</i>
+                      <span class="label label-warning"style="width:20px;height:15px;border-radius:30px;color: black !important;">
                           <?php
                           $approved = $this->Morders->orders_count_header();
                           $not_approved = $this->Morders->orders_count_header_not();
@@ -83,3 +83,12 @@ if($user['img']){
 </div>
 </nav>
 </header>
+<style>
+   .skin-blue .main-header .navbar{
+    background-image: linear-gradient(to right, rgba(243, 9, 52, 0.8), rgba(29, 173, 193, 0.8)) !important;
+    }
+    .main-sidebar{
+        background-image: linear-gradient(to right, rgba(243, 9, 52, 0.7) 1%, rgba(29, 173, 193, 0.7)) !important;
+    }
+  
+</style>

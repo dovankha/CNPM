@@ -40,7 +40,7 @@ class Dangnhap extends CI_Controller
                 $this->load->view('frontend/layout', $this->data);
             }
         } else {
-            $this->data['title'] = 'Ptitfood - Đăng nhập tài khoản';
+            $this->data['title'] = 'PTITFOOD - Đăng nhập tài khoản';
             $this->data['view'] = 'dangnhap';
             $this->load->view('frontend/layout', $this->data);
         }
@@ -59,20 +59,21 @@ class Dangnhap extends CI_Controller
 
         $today = date('Y-m-d');
         // giới hạn mã giảm giá mới có hạn 30 ngày từ khi đăng ký tài khoản
-        $todaylimit = strtotime(date("Y-m-d", strtotime($today)) . " +1 month");
+        $todaylimit = strtotime(date("Y-m-d", strtotime($today)) . " + 1 month");
         $todaylimit = strftime("%Y-%m-%d", $todaylimit);
 
         $this->load->library('form_validation');
         $this->load->helper('form');
-        $this->form_validation->set_rules('username', 'Tên đăng nhập', 'required|min_length[6]|max_length[32]|is_unique[db_customer.username]|regex_match[/^[a-z0-9]{6,32}$/]'); //|regex_match[/^[a-z0-9]{6,32}$/]
-        $this->form_validation->set_rules('name', 'Họ và tên', 'required|min_length[5]|max_length[32]'); //|regex_match[/^[a-zA-Z ]{5,50}$/]
-        $this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[6]|max_length[32]|valid_password'); //|valid_password
+        $this->form_validation->set_rules('username', 'Tên đăng nhập', 'required|min_length[6]|max_length[32]|is_unique[db_customer.username]|regex_match[/^[a-z0-9]{6,32}$/]');
+        $this->form_validation->set_rules('name', 'Họ và tên', 'required|min_length[5]');
+        $this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[6]|max_length[32]|valid_password');
+
         if (!$this->session->userdata('sessionKhachHang')) {
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[db_customer.email]');
+            $this->form_validation->set_rules('email', 'Email', 'required|is_unique[db_customer.email]');
         }
         $this->form_validation->set_rules('re_password', 'Nhập lại mật khẩu', 'required|matches[password]');
 
-        $this->form_validation->set_rules('phone', 'Số điện thoại', 'required|numeric|min_length[6]|is_unique[db_customer.phone]|regex_match[/0[3|5|7|8|9]+[0-9]{8}$/]'); //|max_length[10]|regex_match[/0[3|5|7|8|9]+[0-9]{8}$/] |numeric|is_unique[db_customer.phone]|max_length[10]||regex_match[/0[3|5|7|8|9]+[0-9]{8}$/|min_length[6]
+        $this->form_validation->set_rules('phone', 'Số điện thoại', 'required|min_length[6]|numeric|is_unique[db_customer.phone]|max_length[10]|regex_match[/0[3|5|7|8|9]+[0-9]{8}$/]');
 
         if ($this->form_validation->run() == TRUE) {
             $data = array(
@@ -90,7 +91,7 @@ class Dangnhap extends CI_Controller
                 'limit_number' => '1',
                 'number_used' => '0',
                 'expiration_date' => $todaylimit,
-                'description' => 'Mã giảm giá 100.000 đ tự động khi đăng ký thành công',
+                'description' => 'Mã giảm giá 100.000 VNĐ tự động khi đăng ký thành công',
                 'created' => $today,
                 'orders' => 0,
                 'trash' => 1,
@@ -112,25 +113,23 @@ class Dangnhap extends CI_Controller
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'votheanh99@gmail.com';
-            $config['smtp_pass']    = 'theanh99';
-            // $config['smtp_user']    = 'hungqb.1205@gmail.com';
-            // $config['smtp_pass']    = 'lbitfqalvlcwpeiy';
+            $config['smtp_user']    = 'ducthangdt0@gmail.com';
+            $config['smtp_pass']    = 'aconkien123';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('votheanh99@gmail.com', 'PTITFOODX');
+            $this->email->from('ducthangdt0@gmail.com', 'PTITFOOD');
             $this->email->to($email);
-            $this->email->subject('PTITFOODX - Quà thành viên mới');
-            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng PTITFOODX, Cửa hàng tặng bạn 1 mã giảm giá giảm 100.000 đ : ' . $tempcoupon . ' , Mã này có giá trị tới ngày ' . $tempdatelimit . '
+            $this->email->subject('PTITFOOD - Quà thành viên mới');
+            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng PTITFOOD, Cửa hàng tặng bạn 1 mã giảm giá giảm 100.000 đ : ' . $tempcoupon . ' , Mã này có giá trị tới ngày ' . $tempdatelimit . '
                 Hãy sử dụng tài khoản để mua hàng để tích lũy nhận thêm nhiều ưu đãi !!!!');
             $this->email->send();
             $this->data['success'] = 'Đăng ký thành công! Bạn đã nhận được 1 mã giảm giá cho thành viên mới, vui lòng kiểm tra email !!';
         }
-        $this->data['title'] = 'PTITFOODX - Đăng ký tài khoản';
+        $this->data['title'] = 'PTITFOOD - Đăng ký tài khoản';
         $this->data['view'] = 'dangky';
         $this->load->view('frontend/layout', $this->data);
     }
@@ -169,22 +168,22 @@ class Dangnhap extends CI_Controller
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'hungqb.1205@gmail.com';
-            $config['smtp_pass']    = 'lbitfqalvlcwpeiy';
+            $config['smtp_user']    = 'ducthangdt0@gmail.com';
+            $config['smtp_pass']    = 'aconkien123';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('hungqb.1205@gmail.com', 'PTITFOODX');
+            $this->email->from('ducthangdt0@gmail.com', 'PTITFOOD');
             $this->email->to($list['email']);
-            $this->email->subject('PTITFOODX - Lấy lại mật khẩu');
+            $this->email->subject('PTITFOOD - Lấy lại mật khẩu');
             $this->email->message('Vui lòng truy cập đường dẫn để lấy lại mật khẩu <button class="btn"><a href="' . base_url() . 'dangnhap/reset_password_new/' . $list['id'] . '">Lấy lại mật khẩu</a></button>');
             $this->email->send();
             $this->data['success'] = 'Bạn vui lòng kiểm tra mail để lấy lại mật khẩu!';
         }
-        $this->data['title'] = 'PTITFOODX - Quên mật khẩu';
+        $this->data['title'] = 'PTITFOOD - Quên mật khẩu';
         $this->data['view'] = 'forget_password';
         $this->load->view('frontend/layout', $this->data);
     }
@@ -193,9 +192,10 @@ class Dangnhap extends CI_Controller
     {
         $email = $this->input->post('email');
         if ($this->Mcustomer->customer_detail_email($email)) {
+
             return TRUE;
         } else {
-            $this->form_validation->set_message(__FUNCTION__, 'Email này không phải thành viên của cửa hàng !!');
+            $this->form_validation->set_message(__FUNCTION__, 'Email chưa này chưa được đăng ký!');
             return FALSE;
         }
     }
@@ -220,12 +220,12 @@ class Dangnhap extends CI_Controller
                 redirect('dang-nhap', 'refresh');
             } else {
                 $this->data['error'] = 'Email không đúng, vui lòng nhập đúng email cần lấy lại mật khẩu !';
-                $this->data['title'] = 'PTITFOODX - Cập nhật mật khẩu mới';
+                $this->data['title'] = 'PTITFOOD - Cập nhật mật khẩu mới';
                 $this->data['view'] = 'reset_password_new';
                 $this->load->view('frontend/layout', $this->data);
             }
         }
-        $this->data['title'] = 'PTITFOODX - Cập nhật mật khẩu mới';
+        $this->data['title'] = 'PTITFOOD - Cập nhật mật khẩu mới';
         $this->data['view'] = 'reset_password_new';
         $this->load->view('frontend/layout', $this->data);
     }

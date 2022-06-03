@@ -1,4 +1,5 @@
 <?php echo form_open('dang-nhap'); ?>
+
 <div class="container">
 	<div class="products-wrap">
 		<div class="container">
@@ -38,3 +39,23 @@
 		</div>
 	</div>
 </div>
+<style>
+	#login .acctitle{
+		color: black;
+		font-size: 25px;
+		font-weight: 600;
+	}
+	#login input{
+		border-radius:6px;
+		outline: none;
+	
+	}
+	.nobottommargin button{
+		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+border-radius:5px;
+
+	}
+	#login .button.button-3d{
+		border:1px solid black;
+	}
+</style>

@@ -117,10 +117,11 @@ class Mproduct extends CI_Model {
     }
     // Trang tìm kiếm
     public function product_search($name,$limit,$first){
-        $this->db->like('name', $name);
-        $this->db->where('trash', 1);
-        $this->db->order_by('created', 'desc');
-        $query = $this->db->get($this->table,$limit,$first);
+        // $this->db->like('name', $name);
+        // $this->db->where('trash', 1);
+        // $this->db->order_by('created', 'desc');
+        // $query = $this->db->get($this->table,$limit,$first);
+        $query = $this->db->query("select * from db_product where name like '%$name%' and trash = 1 order by created desc");
         return $query->result_array();
     }
 

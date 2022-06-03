@@ -15,7 +15,7 @@ class Trangchu extends CI_Controller {
     
 	public function index()
 	{
-        $this->data['title']='PTITFOOD - CƠM CĂN TIN';
+        $this->data['title']='PTITFOOD - CĂN TIN HỌC VIỆN HOÀNG GIA';
         $this->data['view']='index';
 		$this->load->view('frontend/layout',$this->data);
 	}

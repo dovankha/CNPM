@@ -1,5 +1,6 @@
 <?php
-class Mcategory extends CI_Model {
+class Mcategory extends CI_Model
+{
     public function __construct()
     {
         parent::__construct();
@@ -13,7 +14,7 @@ class Mcategory extends CI_Model {
         $this->db->where('trash', 1);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        $row=$query->row_array();
+        $row = $query->row_array();
         return $row['id'];
     }
 
@@ -24,7 +25,7 @@ class Mcategory extends CI_Model {
         $this->db->where('trash', 1);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        $row=$query->row_array();
+        $row = $query->row_array();
         return $row['name'];
     }
     public function category_link($id)
@@ -34,7 +35,7 @@ class Mcategory extends CI_Model {
         $this->db->where('trash', 1);
         $this->db->limit(1);
         $query = $this->db->get($this->table);
-        $row=$query->row_array();
+        $row = $query->row_array();
         return $row['link'];
     }
 
@@ -54,12 +55,11 @@ class Mcategory extends CI_Model {
         $this->db->where('status', 1);
         $this->db->where('trash', 1);
         $query = $this->db->get($this->table);
-        $a[]=$parentid;
-        if(count($query->result_array()))
-        {
-            $list=$query->result_array();
+        $a[] = $parentid;
+        if (count($query->result_array())) {
+            $list = $query->result_array();
             foreach ($list as $row) {
-                $a[]=$row['id'];
+                $a[] = $row['id'];
             }
         }
         return $a;
@@ -74,5 +74,4 @@ class Mcategory extends CI_Model {
         $query = $this->db->get($this->table);
         return $query->result_array();
     }
-    
 }

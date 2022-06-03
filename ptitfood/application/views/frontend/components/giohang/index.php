@@ -1,11 +1,42 @@
+<style>
+	.view_cat{
+		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+		font-weight: 800;
+		font-size: 1.7rem;
+		border-radius:10px;
+		padding:10px;
+	}
+	.view_cat h2{
+		font-weight: 600;
+	padding-left:20px;
+	
+	}
+	#product-detail #ProductDetailsForm .product-v-desc.col-md-10.col-12.col-xs-12 h3, #product-detail #ProductDetailsForm .product-comment.product-v-desc h3{
+		text-decoration: none !important;
+	}
+	.btn,.btn-next-checkout{
+		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+border-radius:5px;
+padding:8px;
+margin-bottom:10px;
+border:1px solid black;
+	}
+	.content-cart{
+		min-height:400px;
+	}
+	.table span.amount{
+		color: #22e781 !important;
+	}
+	
+</style>
 <div class="row content-cart">
 	<div class="container">
 		<?php if($this->session->userdata('cart')):
 			$cart = $this->session->userdata('cart');
 			?>
-			<form action="" method="post" id="cartformpage">
+			<form action="" method="post" id="cartformpage" class="view_cat">
 				<div class="cart-index">
-				<h2>Chi tiết giỏ hàng</h2>
+				<h2>=> Chi tiết giỏ hàng</h2>
 					<div class="tbody text-center">
 						<div class="col-xs-12 col-12 col-sm-12 col-md-8 col-lg-8">
 
@@ -26,7 +57,7 @@
 										$row = $this->Mproduct->product_detail_id($key);
 										?>
 										<tr>
-											<td class="img-product-cart">
+											<td class="img-product-cart">	
 												<a href="<?php echo $row['alias'] ?>">
 													<img src="public/images/products/<?php echo $row['avatar'] ?>" alt="<?php echo $row['name'] ?>">
 												</a>
@@ -68,7 +99,7 @@
 									<?php endforeach; ?>
 								</tbody>
 							</table>
-							<button class="btn" onclick="window.location.href='san-pham'"> <a href="<?php echo base_url() ?>san-pham">Tiếp tục mua hàng</a></button>
+							<button class="btn" onclick="window.location.href='san-pham'" > <a href="<?php echo base_url() ?>san-pham">Tiếp tục mua hàng</a></button>
 						</div>
 						<?php $total = 0; ?>
 						<?php foreach ($cart as $key => $value) : 
@@ -115,6 +146,8 @@
 			<?php else: ?>
 				<div class="cart-info">
 					Chưa có sản phẩm nào trong giỏ hàng !
+					<br>	
+					<br>	
 					<br>	
 					<button class="btn" onclick="window.location.href='san-pham'"> Tiếp tục mua hàng</button>
 				</div>

@@ -112,8 +112,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <div class="btn-tks clearfix">
-                    <button type="button" onclick="window.location.href='<?php echo base_url() ?>trang-chu'" class="btn-next-checkout pull-left">Tiếp tục mua hàng</button>
-                    <button type="button" onclick="window.print()" class="btn-update-order pull-left">In</button>
+                    <button type="button" onclick="window.location.href='<?php echo base_url() ?>trang-chu'" class="btn-next-checkout pull-left" style="background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));border-radius:5px;border:1px solid black;">Tiếp tục mua hàng</button>
+                    <button type="button" onclick="window.print()" class="btn-update-order pull-left" style="background:gray;border:1px solid aqua">In</button>
                 </div>
             </div>
         </div>

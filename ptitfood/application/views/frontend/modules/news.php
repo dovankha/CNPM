@@ -1,9 +1,9 @@
 <div class="widget">
 	<p>Bài viết mới nhất</p>
 	<div class="tab-container ">
-		<?php
+		<?php  
 		$posts = $this->Mcontent->content_get_news(5);
-		foreach ($posts as $value) : ?>
+		foreach ($posts as $value) :?>
 			<div class="spost clearfix">
 				<div class="entry-image e-img">
 					<a href="tin-tuc/<?php echo $value['alias'] ?>" class="nobg a-circle">

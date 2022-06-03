@@ -85,13 +85,13 @@ if(!$this->session->userdata('cart')){
                                     <div class="error" id="result_coupon"></div>
                                     </td>
                                      <td colspan="1">
-                                    <a class="check-coupon" title="mã giảm giá" onclick="checkCoupon()">Sử dụng</a>
+                                    <a class="check-coupon" title="mã giảm giá" onclick="checkCoupon()"><img style="width:30px;height:30x;display:block;" src="public/images/check.png" alt=""></a>
                                 </td>
                                 </tr>
                             <tr>
                                 <td style="border: none;"></td>
                                 <td style="border: none;"><div class="btn-checkout frame-100-1 overflow-hidden border-pri" style="float: right;">
-                                    <button type="submit" style="width: 300px" class="bg-pri border-pri col-fff" name="dathang">Đặt hàng</button></td>
+                                    <button type="submit" style="width: 200px;margin-top:20px;	background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));border-radius:5px;border:1px solid black;" class="bg-pri border-pri col-fff" name="dathang">Đặt hàng</button></td>
                                 </tr>
                             </tbody>
                         </table>

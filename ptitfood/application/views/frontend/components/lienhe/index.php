@@ -42,7 +42,7 @@
 							<label for="message"><em> Lời nhắn</em><span class="required">*</span></label>
 							<textarea id="message" name="content" class="form-control custom-control" rows="5"></textarea>
 						</div>
-						<button type="submit" class="btn-update-order" >Gửi nhận xét</button>
+						<button type="submit" class="btn-update-order" >Gửi nhận xét,góp ý</button>
 
 					</div>
 				</form>
@@ -54,15 +54,15 @@
 			<ul class="list-unstyled_about">
 				<li class="clearfix">
 					<i class="fa fa-map-marker fa-1x"></i>
-					<span> PTITFOOD - 97 Man Thiện, Quận 9, TP HCM </span><br>
+					<span> PTITFOOD - 97 Man Thiện, TP. Thủ Đức, TP HCM </span><br>
 				</li>
 				<li class="clearfix">
 					<i class="fa fa-phone fa-1x" ></i>
-					<span>033.622.1622</span>
+					<span>0333.441.620</span>
 				</li>
 				<li class="clearfix">
 					<i class="fa fa-envelope fa-1x "></i>
-					<span><a href="mailto:sale.ptitfood@gmail.com">sale.ptitfood@gmail.com</a></span>
+					<span><a href="mailto:sale.ptitfood@gmail.com">contac.ptit@gmail.com</a></span>
 				</li>
 			</ul>
 			<img src="public/images/ptit-logo.png" alt="" class="about-img">

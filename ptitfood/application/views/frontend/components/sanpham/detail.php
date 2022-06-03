@@ -1,3 +1,140 @@
+<style>
+.product-wrap .collection__title,.main-ul li,.list-menu ul.sub{
+
+    background-image: linear-gradient(to right, rgba(243, 9, 52,0.8), rgba(29, 173, 193,0.8));
+    border-radius:5px;
+    
+}
+.widget{
+    background:black;
+}
+.main-ul li a{
+    border:1px solid transparent;
+}
+.main-ul li a:hover{
+    border-color: black !important;
+}
+.main-ul li a{
+    color:white;
+}
+
+#list-product{
+    margin:30px;
+}
+/* ------------------------------ */
+.products-grid.clearfix{display: flex;
+    justify-content: space-around
+}
+.recommend-prod .owl-stage-outer{
+    padding:20px;
+}
+.product-lt .img-p{
+    border-radius:30% 0 30% 0;
+}
+.product-lt:hover .img-p{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
+}
+
+.product-lt{
+   
+   
+       
+        
+        
+      
+      
+        z-index:100;
+
+
+        position: relative;
+        background-clip: padding-box;
+        border:15px solid black;
+        border-radius: 30px;
+        margin:20px;
+        min-height: 370px;
+        background-color:black;
+        margin-top:5px;
+      
+        margin-right: 10px;
+        width: 110%;
+      
+}
+.product-lt:before{
+       
+
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -100;
+        margin: -10px;
+        border-radius: inherit;
+        background-image: linear-gradient(to right top, #3d9bb1, rgba(29, 173, 193, 0.1)) !important;
+       
+       
+}
+.lt-product-group-image{
+    width:100%;
+    height:40%;
+    margin-bottom:20px;
+   
+}
+.lt-product-group-image a{
+    display:inline-block;
+}
+.lt-product-group-info h3{
+    text-align: center;
+    color: white;
+    font-size: 1.7rem;
+   
+}
+.lt-product-group-info .price-box{
+    
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.lt-product-group-info .price-box p{
+    padding:20px;
+    color: white;
+}
+.lt-product-group-info .price-box p span{
+    
+    color: white;
+}
+   .lt-product-group-image .img-p{
+       width:100%;
+       height:100%;
+       display: block;
+       
+       
+object-fit: cover;
+object-position: center;
+   }
+   .lt-product-group-inf a,.lt-product-group-inf div{
+       text-align: center;
+   }
+   .product-v-desc h3{
+	 text-decoration: none !important;
+   }
+   .product-v-desc{
+	   border:none !important;
+	   background-color: gray;
+	   margin:10px 0px 20px 20px;
+	   border-radius:10px;
+	   padding:10px;
+   }
+   .add_to_cart_detail{
+	background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+border-radius:5px;
+border:1px solid black;
+   }
+   .lt-product-group-image,.lt-product-group-info{
+	   text-align:center;
+   }
+</style>
 <section id="product-detail">
 	<div class="container">
 		<div class="products-wrap">
@@ -69,7 +206,7 @@
 												</li>
 											</ul>
 											<ul>
-												<li>Mua từ 5 mặt hàng tổng giá trị 500.000đ sẽ được tặng mã giảm giá 50.000đ <br/> <a href="https://www.facebook.com/athv99" target="_blank">Liên hệ</a>
+												<li>Mua từ 5 mặt hàng tổng giá trị 500.000đ sẽ được tặng mã giảm giá 100.000đ <br/> <a href="#" target="_blank">Liên hệ</a>
 												</li>
 											</ul>
 										</div>
@@ -84,11 +221,11 @@
 							<div style="margin-top: 20px;">
 								<b>CHẤT LƯỢNG</b>
 								<br>
-								<span>PTITFOODX là chuỗi cửa hàng tiện lợi nằm trong trường học lớn nhất Việt Nam</a>
+								<span>PTITFOOD là chuỗi cửa hàng tiện lợi nằm trong trường học lớn nhất Việt Nam</a>
 							</div>
 						</div>
 					</div>
-					<div class="product-v-desc col-md-10 col-12 col-xs-12">
+					<div class="product-v-desc col-md-10 col-12 col-xs-12"style="width:100%;">
 						<h3>Đặc điểm nổi bật</h3>
 						<?php echo $row['detail']?>
 					</div>

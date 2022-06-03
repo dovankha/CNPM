@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Hệ thống quản lý cơ sở dữ liệu</title>
-        <link rel="shortcut icon" href="public/images/templates/favicon.png" />
+        <link rel="shortcut icon" href="public/images/favicon.png" />
 		<link rel="stylesheet" href="public/css/bootstrap.css">
 		<link rel="stylesheet" href="public/css/login.css">
 		<link rel="stylesheet" href="public/css/font-awesome.min.css">
@@ -13,7 +13,7 @@
     <body>
         <div class="container khung">
             <div class="title">
-                <h2 class="text-center" style="color:#337ab7">PTITFOODX</h2>
+                <h2 class="text-center" style="color:#337ab7">PTITFOOD</h2>
             </div>
             <hr>
             <div class="myform">
@@ -51,7 +51,7 @@
         </div>
         <nav class="navbar navbar-fixed-bottom" role="navigation">
             <div class="container">
-               <h5 class="text-center">Copyright © 2021 <a href="#" style="color:red">PTITFOODX</a>. All rights reserved.</h5>
+               <h5 class="text-center">Copyright © 2022 <a href="#" style="color:red">PTITFOOD</a>. All rights reserved.</h5>
             </div>
         </nav>
         <!-- jQuery -->

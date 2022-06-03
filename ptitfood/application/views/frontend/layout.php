@@ -14,10 +14,17 @@
         if (isset($title))
             echo $title;
         else
-            echo "PTITFOOD - CƠM CĂN TIN";
+            echo "PTITFOOD - CĂN TIN HỌC VIỆN HOÀNG GIA";
         ?>
     </title>
-    <link rel="icon" type="image/x-icon" href="public/images/favicon.png">
+    <link rel="icon" href="public/images/favicon.png" />
+    <script type="module" crossorigin src="public/js/index.js"></script>
+    <link rel="modulepreload" href="public/js/vendor.js">
+    <link rel="stylesheet" href="public/css/index.2aaa860d.css">
+
+
+
+    <link rel="icon" type="image/x-icon" href="public/images/icon.png">
     <link href="public/css/bootstrap.css" rel="stylesheet">
     <link href="public/css/font-awesome.css" rel="stylesheet">
     <link href="public/css/lte.css" rel="stylesheet">
@@ -30,10 +37,57 @@
     <link href="public/css/flexslider.css" rel="stylesheet">
     <link href="public/css/style.css" rel="stylesheet">
     <link href="public/css/about-style.css" rel="stylesheet">
-
+    <link rel="icon" href="public/images/favicon.png" />
+    <script type="module" crossorigin src="gioithieu/"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 
     <script src="public/js/jquery-2.2.3.min.js"></script>
+    <style>
+        body::-webkit-scrollbar {
+            /* chiều rộng của thanh scroll */
+            width: 15px;
+        }
+
+        body,
+        .navbar-collaps {
+            /* background-image: linear-gradient(to left top, rgba(103, 106, 106, 0.2), rgba(196, 204, 207, 0.3)) !important; */
+            /* background: #fafafa; */
+            background-color: #efefef;
+
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 18px;
+
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-image: linear-gradient(to bottom, rgba(165, 20, 184, 0.6), rgba(24, 144, 224, 0.8));
+            border-radius: 10px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background-image: linear-gradient(to left bottom, rgba(182, 236, 227, 0.3), rgba(235, 16, 187, 0.4));
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        .bottom_support .hotline_bottom {
+            background-image: linear-gradient(to right, rgba(243, 9, 52, 0.8), rgba(29, 173, 193, 0.8)) !important;
+            border-top: 2px solid red;
+        }
+
+        .bottom_support .guide_payment {
+            background-image: linear-gradient(to right, rgba(29, 173, 193, 0.8), rgba(243, 9, 52, 0.8)) !important;
+            border-top: 2px solid red;
+        }
+
+        .bottom_support .advisory_online {
+            background-image: linear-gradient(to right, rgba(243, 9, 52, 0.8), rgba(29, 173, 193, 0.8)) !important;
+            border-top: 2px solid red;
+        }
+    </style>
 </head>
 
 <!-- TOPBAR -->
@@ -63,6 +117,12 @@ if (isset($com, $view)) {
 <?php
 $this->load->view('frontend/modules/footer');
 ?>
+<script>
+    let phone_contact = document.querySelectorAll(".bottom_support .hotline_bottom strong");
+    for (index in phone_contact.length) {
+        phone_contact[index].innerHTML = "0111222333";
+    }
+</script>
 <script src="public/js/bootstrap.js"></script>
 <script src="public/js/app.min.js"></script>
 <script src="public/js/owl.carousel.js"></script>

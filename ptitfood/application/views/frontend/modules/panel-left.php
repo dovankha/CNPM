@@ -66,8 +66,53 @@
                 ?>
                 <li class="pull-left"><a href="tin-tuc/1"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Tin tức</a></li>
                 <li class="pull-left"><a href="gioi-thieu"><i class="fas fa-user" aria-hidden="true"></i> Giới thiệu</a></li>
-                <li class="pull-left"><a href="lien-he"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> Liên hệ</a></li>
+                <!-- <li class="pull-left"><a href="lien-he"><i class="fab fa-facebook-messenger" aria-hidden="true"></i> Liên hệ</a></li> -->
             </ul>
         </div>
     </div>
 </div>
+<style>
+    .menu-right {
+        margin-top: 16px;
+        position: relative;
+        background-clip: padding-box;
+        border: 15px solid transparent;
+        display: inline-block;
+        height: 80px;
+        border-radius: 18px;
+        background-color: #f3f3f3;
+
+    }
+
+    .menu-right::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        margin: -10px;
+        border-radius: inherit;
+        /* background-image: linear-gradient(to bottom right, rgba(27, 124, 250, 0.1) 10%, rgba(243, 13, 13, 0.1) 70%); */
+        background-color: #fafafa;
+        animation-name: bg;
+        animation-duration: 1s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+
+    }
+
+    @keyframes bg {
+        to {
+            /* background-image: linear-gradient(to  right, #f0f0f0 60%, rgba(27, 124, 250, 0.1) 10%); */
+            background-color: #f3f3f3;
+        }
+    }
+
+    .menu-right li a {
+        color: darkred;
+        font-size: 15px;
+    }
+
+    .menu-right li a:hover {
+        background-image: linear-gradient(to right, rgb(223, 39, 134), rgb(244, 22, 22));
+    }
+</style>

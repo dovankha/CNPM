@@ -20,7 +20,7 @@ class Giohang extends CI_Controller
 
     public function index()
     {
-        $this->data['title'] = 'PTITFOODX - Giỏ hàng của bạn';
+        $this->data['title'] = 'PTITFOOD - Giỏ hàng của bạn';
         $this->data['view'] = 'index';
         $this->load->view('frontend/layout', $this->data);
     }
@@ -159,7 +159,7 @@ class Giohang extends CI_Controller
             $this->session->unset_userdata($array_items);
             redirect('/thankyou', 'refresh');
         } else {
-            $this->data['title'] = 'PTITFOODX - Thông tin đơn hàng';
+            $this->data['title'] = 'PTITFOOD - Thông tin đơn hàng';
             $this->data['view'] = 'info-order';
             $this->load->view('frontend/layout', $this->data);
         }
@@ -193,8 +193,8 @@ class Giohang extends CI_Controller
             $config['smtp_host']    = 'ssl://smtp.gmail.com';
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
-            $config['smtp_user']    = 'hungqb.1205@gmail.com';
-            $config['smtp_pass']    = 'lbitfqalvlcwpeiy';
+            $config['smtp_user']    = 'ducthangdt0@gmail.com';
+            $config['smtp_pass']    = 'aconkien123';
             // mk trên la mat khau dung dung cua gmail, có thể dùng gmail hoac mat khau. Tao mat khau ung dung de bao mat tai khoan
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
@@ -202,10 +202,10 @@ class Giohang extends CI_Controller
             $config['mailtype'] = 'html';
             $config['validation'] = TRUE;
             $this->email->initialize($config);
-            $this->email->from('votheanh99@gmail.com', 'PTITFOODX');
+            $this->email->from('ducthangdt0@gmail.com', 'PTITFOOD');
             $list = array($val['email']);
             $this->email->to($list);
-            $this->email->subject('Công ty CP PTITFOODX');
+            $this->email->subject('PTITFOOD - THÔNG TIN ĐƠN HÀNG');
             $body = $this->load->view('frontend/modules/email', $data, TRUE);
             $this->email->message($body);
             $this->email->send();
@@ -215,7 +215,7 @@ class Giohang extends CI_Controller
             $this->Mcustomer->customer_update($datax, $idx);
             $this->session->unset_userdata('id-info-customer', 'money_check_coupon');
         }
-        $this->data['title'] = 'ptitfoodx.vn - Kết quả đơn hàng';
+        $this->data['title'] = 'PTITFOOD.vn - Kết quả đơn hàng';
         $this->data['view'] = 'thankyou';
         $this->load->view('frontend/layout', $this->data);
     }
@@ -257,7 +257,6 @@ class Giohang extends CI_Controller
                         $money += $total;
                     }
                 }
-                //
                 // KIỂM TRA MÃ GIẢM GIÁ CÓ TỒN TẠI KO
                 $coupon = $_POST['code'];
                 $getcoupon = $this->Mconfig->get_config_coupon_discount($coupon);
@@ -291,4 +290,3 @@ class Giohang extends CI_Controller
         echo json_encode($html);
     }
 }
-// email trang thankyou bị sai

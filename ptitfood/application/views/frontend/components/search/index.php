@@ -109,3 +109,29 @@
         });
     }
 </script>
+<style>
+.product-wrap .collection__title,.main-ul li,.list-menu ul.sub{
+
+    background-image: linear-gradient(to right, rgba(243, 9, 52,0.8), rgba(29, 173, 193,0.8));
+   
+    border-radius:5px;
+    
+}
+
+.widget{
+    background:black;
+}
+.main-ul li a{
+    border:1px solid transparent;
+}
+.main-ul li a:hover{
+    border-color: black !important;
+}
+.main-ul li a{
+    color:white;
+}
+
+#list-product{
+    margin:30px;
+}
+</style>

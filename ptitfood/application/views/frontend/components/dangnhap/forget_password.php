@@ -10,7 +10,7 @@
 					if(isset($success))
 						echo '<h4 style="color:green;">'.$success.'</h4>';
 					?>
-					<div class="acc_content clearfix" style="display: block;">
+					<div class="acc_content clearfix btn_forget" style="display: block;">
 						<div class="col_full">
 							<label for="login-form-password">Email :<span class="require_symbol">* </span></label>
 							<input type="email" id="login-form-password" name="email" value="" class="form-control">
@@ -22,4 +22,12 @@
 			</form>
 		</div>
 	</div>
+	
 </div>
+<style>
+	.btn_forget button{
+		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+border-radius:5px;
+border:1px solid black;
+	}
+</style>

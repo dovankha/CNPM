@@ -23,6 +23,7 @@
 					</div>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
+					<marquee style="color:#f0f0f0;font-size:1.7rem;width:70%;line-height:3;font-weight:600">PTITFOOD - CĂN TIN HỌC VIỆN HOÀNG GIA | 97 Man Thiện, P. Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</marquee>
 					<ul class="nav navbar navbar-nav" id="nav1">
 						<li><a href="/">Trang chủ</a></li>
 						<li><a href="san-pham/1">Sản phẩm</a></li>
@@ -56,3 +57,35 @@
 		</div>
 	</nav>
 </section>
+<style>
+	.nav.navbar.navbar-nav.pull-right li {
+		background-image: linear-gradient(to right, rgb(223, 39, 134), rgb(244, 22, 22));
+		margin: 10px 30px 10px 10px;
+		border-radius: 10px;
+		position: relative;
+
+	}
+
+	.menu-right li a {
+		color: gray !important;
+		font-weight: 500;
+	}
+
+	.menu-right .pull-left a:hover {
+		background: gray !important;
+		color: #fafafa !important;
+	}
+
+	.nav.navbar.navbar-nav.pull-right li:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-image: inherit;
+		transform: scale(1.2, 1.2);
+		border-radius: inherit;
+		opacity: 0.3;
+	}
+</style>
