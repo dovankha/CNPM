@@ -1,4 +1,7 @@
 <?php echo form_open('admin/customer/insert'); ?>
+<?php
+ini_set("display_errors","off");
+?>
 <div class="content-wrapper" style="min-height: 454px;">
     <form action="http://kimhongphat.com/khpquanly/customer/insert.html" method="post" accept-charset="utf-8">
         <section class="content-header">

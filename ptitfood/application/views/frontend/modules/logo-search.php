@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <style>
   .logo-search .container {
     background: red;

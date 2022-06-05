@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/useradmin/update/'.$row['id']); ?>
 <div class="content-wrapper">
     <form action="admin/useradmin/update.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">

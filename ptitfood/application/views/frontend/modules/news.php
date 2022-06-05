@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="widget">
 	<p>Bài viết mới nhất</p>
 	<div class="tab-container ">

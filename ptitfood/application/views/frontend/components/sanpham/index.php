@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <style>
 .product-wrap .collection__title,.main-ul li,.list-menu ul.sub{
 
@@ -23,7 +26,8 @@
 }
 /* -------------------- */
 .products-grid.clearfix{display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .recommend-prod .owl-stage-outer{
@@ -59,7 +63,7 @@
         margin-top:5px;
       
         margin-right: 10px;
-        width: 110%;
+        width: 98%;
       
 }
 .product-lt:before{

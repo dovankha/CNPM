@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/product/insert'); ?>
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/product/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">

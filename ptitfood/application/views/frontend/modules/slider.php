@@ -1,4 +1,6 @@
-
+<?php
+ini_set("display_errors","off");
+?>
 <div class="owl-carousel-slider owl-carousel owl-theme">
     <?php
     $list_banner = $this->Mslider->list_img_banner();

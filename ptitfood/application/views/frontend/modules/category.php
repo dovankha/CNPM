@@ -1,4 +1,6 @@
-
+<?php
+ini_set("display_errors","off");
+?>
 <div class="widget" style="margin: 0px; min-height: 0px;">
     <p>Danh mục sản phẩm</p>
 </div>

@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/product/import/'.$row['id']); ?>
 <?php  
 	$list=$this->Mcategory->category_list();

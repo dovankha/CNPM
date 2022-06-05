@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="container order-page">
 	<div class="general__title">
 		<h2>Chi tiết đơn hàng</h2>

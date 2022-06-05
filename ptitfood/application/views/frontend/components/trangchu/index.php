@@ -1,24 +1,26 @@
+
 <section id="menu-slider">
-    <div class="slider">
-        <div class="container">
+    <div class="slider ">
+        <div class="container reveal fade-bottom active">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 list-menu pull-left ptitfood-menu" style="height: 321px;">
                 <div class="ptitfood-info">
                     <a href="#" class="info-item_link first-item"><i class="fas fa-school"></i>WELCOME TO PTITFOOD</a>
                     <ul class="info-list">
                         <li class="info-item">
-                            <a href="#" class="info-item_link">MÓN ĂN BÁN CHẠY</a>
+                            <a href="#trend" class="info-item_link">MÓN ĂN BÁN CHẠY</a>
                         </li>
                         <li class="info-item">
-                            <a href="#" class="info-item_link">MÓN ĂN NỔI BẬT</a>
+                            <a href="#hot" class="info-item_link">MÓN ĂN NỔI BẬT</a>
                         </li>
                         <li class="info-item">
-                            <a href="#" class="info-item_link">TIN TỨC</a>
+                            <a href="#new" class="info-item_link">TIN TỨC</a>
                         </li>
                         <li class="info-item">
-                            <a href="#" class="info-item_link">THÔNG TIN</a>
+                            <a href="#footer" class="info-item_link">THÔNG TIN</a>
                         </li>
                         <!-- <li class="info-item">
                             <a href="#" class="info-item_link"></a>
+                            trend,hot,new,footer
                         </li> -->
                     </ul>
                 </div>
@@ -49,7 +51,7 @@
                         <div class="list-header-z">
                             <h2><a href="<?php echo  $rowCategory['link'] ?>"> <img src="http://localhost/ptitfood/public/images/hot.gif" alt=""> <?php echo  $rowCategory['name'] ?> nổi bật <img src="http://localhost/ptitfood/public/images/hot.gif" alt=""></a></h2>
                             <b>
-                                <ul class="sub-category">
+                                <ul class="sub-category ">
                                     <?php foreach ($subCategory as $rowSubCategory) : ?>
                                         <li>
                                             <a href="san-pham/<?php echo $rowSubCategory['link'] ?>" title="<?php echo $rowSubCategory['name'] ?>" class="ws-nw overflow ellipsis">
@@ -60,7 +62,7 @@
                                 </ul>
                             </b>
                         </div>
-                        <div class="product-container">
+                        <div class="product-container ">
                             <?php foreach ($listProducts as $sp) : ?>
                                 <div class="p-box-5">
                                     <div class="product-lt">
@@ -112,10 +114,10 @@
     </div>
     <div class="container" style="margin-bottom: 20px;">
     </div>
-    <div class="container" style="margin-bottom: 20px;">
+    <div class="container reveal fade-left box_scoll " style="margin-bottom: 20px;">
         <div class="recommend-prod">
             <div class="sale-title">
-                <span class="title-cart"><i class="fas fa-cat"></i> KHUYẾN MÃI HOT</span>
+                <span id="hot" class="title-cart" style="color:red;"><i class="fas fa-cat"></i> KHUYẾN MÃI HOT</span>
                 <a href="#">XEM TẤT CẢ <i class="fas fa-chevron-right"></i></a>
             </div>
             <div class="owl-carousel owl-carousel-product owl-theme">
@@ -152,12 +154,12 @@
                                         <p class="old-price">
                                             <span class="price" style="color: #fff"><?php echo (number_format($row['price'])); ?>₫</span>
                                         </p>
-                                        <p class="special-price">
+                                        <p class="special-price ">
                                             <span class="price"><?php echo (number_format($row['price'])); ?>₫</span>
                                         </p>
                                     <?php endif; ?>
                                 </div>
-                                <div class="clear"></div>
+                                <div class="clear "></div>
                             </div>
                         </div>
                     </div>
@@ -168,7 +170,7 @@
 
 
 
-    <div class="container show_produc" style="margin-bottom: 20px;">
+    <div id="trend" class="container show_produc reveal fade-bottom box_scoll " style="margin-bottom: 20px;">
         <div class="recommend-prod">
             <div class="sale-title">
                 <span class="title-cart"><i class="fas fa-cat"></i> MÓN ĂN BÁN CHẠY NHẤT </span>
@@ -226,7 +228,7 @@
 </section>
 
 
-<div class="home-blog">
+<div class="home-blog reveal fade-right box_scoll " id="new">
     <div class="container">
         <div class="row-p">
             <div class="text-center">
@@ -251,9 +253,9 @@
         </div>
     </div>
 </div>
-<div class="adv">
+ <div class="adv">
     <section id="service" style="margin: 20px;">
-        <div class="container">
+        <div class="container reveal fade-right">
             <div class="row">
                 <div id="service_home" class="clearfix">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-center m-b-xs-10">
@@ -309,6 +311,125 @@
     <!--Begin-->
     <!--End-->
 </div>
+<!--amination =============================================================================================================== -->
+<style>
+
+.reveal {
+        position: relative;
+        opacity: 0;
+    }
+    
+    .reveal.active {
+        opacity: 1;
+    }
+    
+    .active.fade-bottom {
+        animation: fade-bottom 0.5s ease-in;
+    }
+    
+    .active.fade-left {
+        animation: fade-left 0.5s ease-in;
+    }
+    
+    .active.fade-right {
+        animation: fade-right 0.5s ease-in;
+    }
+    
+    @keyframes fade-bottom {
+        0% {
+            transform: translateY(50px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fade-left {
+        0% {
+            transform: translateX(-100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fade-right {
+        0% {
+            transform: translateX(100px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+    .ptitfood-info .info-list li a:hover, .ptitfood-info .info-list li a:active{
+        background: #00c2cb;
+        color: #42455a;
+        transition: 0.5s ease-out;
+        letter-spacing: 2px;
+    }
+</style>
+<script>
+
+
+ 
+  
+    
+  
+    
+
+
+let section = document.querySelectorAll(".box_scoll");
+    let menu = document.querySelectorAll(".ptitfood-info .info-list li a");
+
+    window.onscroll = () => {
+        section.forEach((i) => {
+            let top = window.scrollY;
+            let offset = i.offsetTop - 150;
+            let height = i.offsetHeight;
+            let id = i.getAttribute("id");
+
+            if (top >= offset && top < offset + height) {
+                menu.forEach((link) => {
+                    link.classList.remove("active");
+                    document
+                        .querySelector(".ptitfood-info .info-list li a[href*=" + id + "]")
+                        .classList.add("active");
+                });
+            }
+        });
+    };
+   
+
+   
+ 
+
+
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+</script>
+<!--animation =============================================================================================================== -->
+
 <!--=== BEGIN: SITE PHẢI ===-->
 <style type="text/css">
     .alo-ph-img-circle {

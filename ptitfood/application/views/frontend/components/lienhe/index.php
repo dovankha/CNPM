@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open( base_url()."lien-he"); ?>
 <section>
 	<div class="container">

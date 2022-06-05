@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1><i class="fa fa-gift"></i> Danh sách nhà cung cấp</h1>

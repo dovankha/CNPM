@@ -1,4 +1,7 @@
+
 <?php
+ini_set("display_errors","off");
+?><?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Sanpham extends CI_Controller {

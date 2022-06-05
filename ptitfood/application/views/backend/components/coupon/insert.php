@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo 	('admin/coupon/insert'); ?>
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/coupon/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">

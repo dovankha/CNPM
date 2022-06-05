@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <style>
 .product-wrap .collection__title,.main-ul li,.list-menu ul.sub{
 
@@ -123,15 +126,15 @@ object-position: center;
     
  
 </style>
-<section id="product-all" class="collection">
+<section id="product-all" class="collection reveal ">
 	<div class="banner-product">
-		<div class="container">
+		<div class="container ">
 			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <img src="public/images/sp.png">
             </div>
 		</div>
 	</div>
-	<div class="slider">
+	<div class="slider ">
 		<div class="container">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <div class="list-menu pull-left col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -140,8 +143,8 @@ object-position: center;
                 <?php $this->load->view('frontend/modules/product-sale'); ?>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 product-content">
-               <div class="product-wrap">
-                 <div class="collection__title">
+               <div class="product-wrap ">
+                 <div class="collection__title ">
                      <h1><span><?php echo $categoryname ?></span></h1>
                     <div id="sort-by" class="hidden-xs">
                       <label class="left hidden-xs" for="sort-select">Sắp xếp theo: </label>

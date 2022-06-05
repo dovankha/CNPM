@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <section id="content">
 	<div class="row wraper">
 		<div class="banner-product">

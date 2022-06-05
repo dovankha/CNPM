@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <section id="header">
 	<nav class="navbar" style="z-index: 9999">
 		<div class="container">
@@ -23,9 +26,10 @@
 					</div>
 				</div>
 				<div id="navbar" class="collapse navbar-collapse">
-					<marquee style="color:#f0f0f0;font-size:1.7rem;width:70%;line-height:3;font-weight:600">PTITFOOD - CĂN TIN HỌC VIỆN HOÀNG GIA | 97 Man Thiện, P. Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</marquee>
+					<marquee  onmouseover="this.stop()" onmouseout="this.start()" scrollamount="6" style="color:#f0f0f0;font-size:1.7rem;width:70%;line-height:3;font-weight:600">PTITFOOD - CĂN TIN HỌC VIỆN HOÀNG GIA | 97 Man Thiện, P. Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</marquee>
+					
 					<ul class="nav navbar navbar-nav" id="nav1">
-						<li><a href="/">Trang chủ</a></li>
+						<li><a href="/" >Trang chủ</a></li>
 						<li><a href="san-pham/1">Sản phẩm</a></li>
 						<li><a href="tin-tuc/1">Tin tức</a></li>
 						<li><a href="gioi-thieu">Giới thiệu</a></li>
@@ -60,20 +64,24 @@
 <style>
 	.nav.navbar.navbar-nav.pull-right li {
 		background-image: linear-gradient(to right, rgb(223, 39, 134), rgb(244, 22, 22));
-		margin: 10px 30px 10px 10px;
+		margin: 10px 28px 10px 8px;
 		border-radius: 10px;
 		position: relative;
+		box-sizing: border-box;
 
 	}
 
 	.menu-right li a {
 		color: gray !important;
 		font-weight: 500;
+		border-radius: 40px;
 	}
 
-	.menu-right .pull-left a:hover {
+	.menu-right .pull-left a:hover,.active_menu {
 		background: gray !important;
 		color: #fafafa !important;
+		border:3px solid aqua;
+		
 	}
 
 	.nav.navbar.navbar-nav.pull-right li:before {

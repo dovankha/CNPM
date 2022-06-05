@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/useradmin/insert'); ?>
 <div class="content-wrapper">
     <form action="admin/useradmin/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">

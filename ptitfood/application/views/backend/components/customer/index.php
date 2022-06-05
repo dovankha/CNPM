@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-user"></i> Danh sách khách hàng</h1>

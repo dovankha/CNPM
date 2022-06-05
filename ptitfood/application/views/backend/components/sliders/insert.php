@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/sliders/insert'); ?>
 <div class="content-wrapper" style="min-height: 454px;">
     <form action="<?php echo base_url() ?>admin/sliders/insert.html" enctype="multipart/form-data" method="post" accept-charset="utf-8">

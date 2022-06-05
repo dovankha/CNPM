@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/contact/detail/'.$row['id']); ?>
 
 <div class="content-wrapper">

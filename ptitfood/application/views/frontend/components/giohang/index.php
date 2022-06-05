@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <style>
 	.view_cat{
 		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
@@ -29,14 +32,15 @@ border:1px solid black;
 	}
 	
 </style>
-<div class="row content-cart">
+
+<div class="row content-cart ">
 	<div class="container">
 		<?php if($this->session->userdata('cart')):
 			$cart = $this->session->userdata('cart');
 			?>
 			<form action="" method="post" id="cartformpage" class="view_cat">
 				<div class="cart-index">
-				<h2>=> Chi tiết giỏ hàng</h2>
+				<h2> Chi tiết giỏ hàng</h2>
 					<div class="tbody text-center">
 						<div class="col-xs-12 col-12 col-sm-12 col-md-8 col-lg-8">
 
@@ -144,7 +148,8 @@ border:1px solid black;
 
 			</form>
 			<?php else: ?>
-				<div class="cart-info">
+				<div class="cart-info reveal fade-left active">
+					<img src="public/images/sad.png" alt=""style="width:300px;">
 					Chưa có sản phẩm nào trong giỏ hàng !
 					<br>	
 					<br>	
@@ -183,3 +188,5 @@ border:1px solid black;
 			});
 		}
 	</script>
+	<style>
+

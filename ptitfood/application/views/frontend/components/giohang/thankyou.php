@@ -1,6 +1,10 @@
+<?php
+ini_set("display_errors","off");
+?>
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed'); 
 ?>
+
 <section id="checkout-cart">
     <div class="container">
         <div class="col-md-12">

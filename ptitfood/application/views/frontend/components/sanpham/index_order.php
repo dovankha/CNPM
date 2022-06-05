@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="collection-filter" id = "list-product">
 	<div class="category-products clearfix">
 		<div class="products-grid clearfix">

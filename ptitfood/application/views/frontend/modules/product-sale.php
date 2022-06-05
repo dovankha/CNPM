@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 products-sale-off">
     <div class="widget">
         <p><img src="http://localhost/organic/upload/icon/hot.gif" alt=""> Sản phẩm khuyến mãi <img src="http://localhost/organic/upload/icon/hot.gif" alt=""></p>

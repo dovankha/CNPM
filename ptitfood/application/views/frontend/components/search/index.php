@@ -1,3 +1,127 @@
+
+<?php
+ini_set("display_errors","off");
+?>
+<style>
+.product-wrap .collection__title,.main-ul li,.list-menu ul.sub{
+
+    background-image: linear-gradient(to right, rgba(243, 9, 52,0.8), rgba(29, 173, 193,0.8));
+    border-radius:5px;
+    
+}
+.widget{
+    background:black;
+}
+.main-ul li a{
+    border:1px solid transparent;
+}
+.main-ul li a:hover{
+    border-color: black !important;
+}
+.main-ul li a{
+    color:white;
+}
+
+#list-product{
+    margin:30px;
+}
+/* -------------------- */
+.products-grid.clearfix{display: flex;
+    justify-content: space-around
+}
+
+.recommend-prod .owl-stage-outer{
+    padding:20px;
+}
+.product-lt .img-p{
+    border-radius:30% 0 30% 0;
+}
+.product-lt:hover .img-p{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+
+}
+
+.product-lt{
+   
+   
+       
+        
+        
+      
+      
+        z-index:100;
+
+
+        position: relative;
+        background-clip: padding-box;
+        border:15px solid black;
+        border-radius: 30px;
+        margin:20px;
+        min-height: 370px;
+        background-color:black;
+        margin-top:5px;
+      
+        margin-right: 10px;
+        width: 98%;
+      
+}
+.product-lt:before{
+       
+
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -100;
+        margin: -10px;
+        border-radius: inherit;
+        background-image: linear-gradient(to right top, #3d9bb1, rgba(29, 173, 193, 0.1)) !important;
+       
+       
+}
+.lt-product-group-image{
+    width:100%;
+    height:40%;
+    margin-bottom:20px;
+   
+}
+.lt-product-group-image a{
+    display:inline-block;
+}
+.lt-product-group-info h3{
+    text-align: center;
+    color: white;
+    font-size: 1.7rem;
+   
+}
+.lt-product-group-info .price-box{
+    
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.lt-product-group-info .price-box p{
+    padding:20px;
+    color: white;
+}
+.lt-product-group-info .price-box p span{
+    
+    color: white;
+}
+   .lt-product-group-image .img-p{
+       width:100%;
+       height:100%;
+       display: block;
+       
+       
+object-fit: cover;
+object-position: center;
+   }
+   .lt-product-group-inf a,.lt-product-group-inf div{
+       text-align: center;
+   }
+</style>
 <section id="product-all" class="collection">
 	<div class="banner-product">
         <div class="container">

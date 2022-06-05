@@ -1,5 +1,8 @@
 <html>
 <body>
+<?php
+ini_set("display_errors","off");
+?>
 	<div style="color: #000;">
 		<p>Xin chào <?php echo $customer['fullname']?>,</p>
 		<p>Cảm ơn Quý khách đã đặt hàng tại <strong>PTITFOOD</strong>!</p>

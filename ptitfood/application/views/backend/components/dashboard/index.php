@@ -1,4 +1,7 @@
 <?php
+ini_set("display_errors","off");
+?>
+<?php
 $d=getdate();
 $year=$d['year'];
 $total = 0; $cost = 0;
@@ -16,6 +19,7 @@ for ($i=1; $i <= 12 ; $i++)
   }
 }
 ?>
+
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->

@@ -1,4 +1,7 @@
 <?php
+ini_set("display_errors","off");
+?>
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 ?>
 <!DOCTYPE html>

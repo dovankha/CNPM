@@ -412,7 +412,7 @@
                                     <div class="is-divider"></div>
                                 </div>
                                 <div class="text-center">
-                                    <div><a href="tel:033.441.620" class="hover-text" rel="nofollow">97 Man Thiện, P. Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</a></div>
+                                    <div><a href="tel:033.441.620" class="hover-text" rel="nofollow"style="color:black;">97 Man Thiện, P. Tăng Nhơn Phú A, TP. Thủ Đức, TP. Hồ Chí Minh</a></div>
                                     <div><span>Email: dichvu.ptit@gmail.com</span></div>
                                 </div>
                             </div>

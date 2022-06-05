@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="content-wrapper">
 	<section class="content-header">
 		<h1><i class="glyphicon glyphicon-text-background"></i> Thùng rác mã giảm giá</h1>
@@ -32,9 +35,9 @@
 											<th class="text-center">ID</th>
 											<th class="text-center">Mã giảm giá</th>
 											<th class="text-center">Số tiền giảm</th>
-											<th class="text-center"">Số lần giới hạn nhập</th>
-											<th class="text-center"">Hạn nhập</th>
-											<th class="text-center"">Trạng thái</th>
+											<th class="text-center">Số lần giới hạn nhập</th>
+											<th class="text-center">Hạn nhập</th>
+											<th class="text-center">Trạng thái</th>
 											<th class="text-center" colspan="2">Thao tác</th>
 										</tr>
 									</thead>

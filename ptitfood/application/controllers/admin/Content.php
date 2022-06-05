@@ -56,7 +56,7 @@ class Content extends CI_Controller {
 			$new_name = "".str_replace(' ','-',$ori_filename);
 			$config['upload_path']= '../../public/images/posts/';
             $config['allowed_types']= 'gif|jpg|png';
-            $config['max_size']= 2000;
+            $config['max_size']= 4000;
 			$config['file_name'] = $new_name;
             $this->load->library('upload', $config);
 
@@ -107,7 +107,7 @@ class Content extends CI_Controller {
 			);
 			$config['upload_path']= './public/images/posts/';
             $config['allowed_types']= 'gif|jpg|png';
-            $config['max_size']= 2000;
+            $config['max_size']= 4000;
             $this->load->library('upload', $config);
             if ( $this->upload->do_upload('img'))
             {

@@ -1,3 +1,6 @@
+<?php
+ini_set("display_errors","off");
+?>
 <div class="container">
 	<div class="row">
 		<div class="col-md-3 col-sm-3 hidden-xs">

@@ -1,4 +1,6 @@
-
+<?php
+ini_set("display_errors","off");
+?>
 <?php echo form_open_multipart('admin/category/insert'); ?>
 <div class="content-wrapper">
 	<form action="admin/category/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">

@@ -132,9 +132,65 @@ $this->load->view('frontend/modules/footer');
 <script src="public/js/search-quick.js"></script>
 <script src="public/js/custom-owl.js"></script>
 <script src="public/js/jquery.flexslider.js"></script>
-<div class='scrolltop'>
-    <div class='scroll icon'><i class="fa fa-4x fa-angle-up"></i></div>
+<div class="backtop">
+  <a href="javascript:;" onclick="backtop()">  <img src="public/images/backtop.png" alt=""></a>
 </div>
+
 </body>
+<style>
+    .backtop{
+        
+        position:fixed;
+        bottom:80px;
+        right:30px;
+        max-width:45px;
+        transform: rotate(-90deg); 
+        /* cursor:pointer;  */
+        display:none;
+    }
+    .backtop img{
+        display:block;
+        width:100%;
+        height:100%;
+    }
+    .menu-right .pull-left a:hover,.menu-right .pull-left a.active_menu {
+		background: gray !important;
+		color: #fafafa !important;
+		border:3px solid aqua;
+		
+	}
+   
+</style>
+<script>
+    window.onscroll=function(){
+        var backtop=document.querySelector(".backtop");
+        var header=document.querySelector(".menu-right");
+        if(document.documentElement.scrollTop>100||document.body.scrollTop>100){
+            backtop.style.display="block";
+         
+            header.style.position="fixed";
+            header.style.top= "-30px";
+           
+            header.style.left= 0;
+            header.style.opacity= 0.6;
+            header.style.top=-100;
+            
+        }
+        else{
+            backtop.style.display="none";
+            header.style.position="relative";
+        }
+    }
+    function backtop(){
+        var top=setInterval(function(){
+            document.documentElement.scrollTop-=20;
+
+            if(document.documentElement.scrollTop<=0){
+               
+                clearInterval(top);
+            }
+        },10);
+    }
+</script>
 
 </html>

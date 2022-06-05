@@ -1,4 +1,7 @@
 <?php echo form_open('admin/customer/update/'.$row['id']); ?>
+<?php
+ini_set("display_errors","off");
+?>
 <div class="content-wrapper">
     <form action="<?php echo base_url() ?>admin/customer/update.html" method="post" accept-charset="utf-8">
         <section class="content-header">
