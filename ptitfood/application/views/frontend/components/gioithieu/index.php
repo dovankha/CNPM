@@ -14,6 +14,15 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
+                      <div class="carousel-slider-animate-opacity">
+                            <img src="public/images/image/dvk.jpg" alt="">
+                            <div class="slide-content">
+                                <h2>Đỗ Văn Kha</h2>
+                                <p>Mã số sinh viên: N19DCAT041</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
                         <!-- elements with  "carousel-slider-animate-opacity" class will have animated opacity -->
                         <div class="carousel-slider-animate-opacity" style="overflow:hidden;border-radius:inherit;">
                             <img class="cover_ncbao" src="public/images/image/nguyenchibao.jpg" alt="">
@@ -24,22 +33,14 @@
                         </div>
 
                     </div>
-                    <div class="swiper-slide">
-                      <div class="carousel-slider-animate-opacity">
-                            <img src="public/images/image/dvk.jpg" alt="">
-                            <div class="slide-content">
-                                <h2>Đỗ Văn Kha</h2>
-                                <p>Mã số sinh viên: N19DCAT041</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     <div class="swiper-slide">
                       <div class="carousel-slider-animate-opacity">
-                            <img src="public/images/image/img1.jpg" alt="">
+                            <img src="public/images/image/hdt.jpg" alt="">
                             <div class="slide-content">
-                                <h2>Nguyễn Chí Bảo</h2>
-                                <p>Mã số sinh viên: N19DCAT006</p>
+                                <h2>Huỳnh Đức Thắng</h2>
+                                <p>Mã số sinh viên: N19DCAT081</p>
                             </div>
                         </div>
                     </div>

@@ -46,9 +46,6 @@ class Coupon extends CI_Controller {
 		if($user_role['role']==2){
 			redirect('admin/E403/index','refresh');
 		}
-
-
-
 		$d=getdate();
 		$today=  $d['year']."/".$d['mon']."/".$d['mday']." ".$d['hours'].":".$d['minutes'].":".$d['seconds'];
 		$today1=   $d['year']."/".$d['mon']."/".$d['mday'];
@@ -111,14 +108,14 @@ class Coupon extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) 
 		{
 			$mydata= array(
-				'code' =>$_POST['code'],
-				'discount' =>$_POST['discount'],
-				'limit_number'=>$_POST['limit_number'], 
-				'payment_limit'=>$_POST['payment_limit'], 
-				'expiration_date'=>$_POST['expiration_date'],
-				'description'=>$_POST['description'],
+				'code' =>htmlspecialchars($_POST['code']),
+				'discount' =>htmlspecialchars($_POST['discount']),
+				'limit_number'=>htmlspecialchars($_POST['limit_number']), 
+				'payment_limit'=>htmlspecialchars($_POST['payment_limit']), 
+				'expiration_date'=>htmlspecialchars($_POST['expiration_date']),
+				'description'=>($_POST['description']),
 				'trash'=>1,
-				'status'=>$_POST['status']
+				'status'=>htmlspecialchars($_POST['status'])
 			);
 			$this->Mcoupon->coupon_update($mydata, $id);
 			$this->session->set_flashdata('success', 'Cập nhật mã giảm giá thành công');

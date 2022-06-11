@@ -21,7 +21,7 @@ class Dangnhap extends CI_Controller
         $this->form_validation->set_rules('password', 'Mật khẩu', 'required|min_length[6]|max_length[32]');
         if ($this->form_validation->run() == TRUE) {
             $username = $_POST['username'];
-            $password = md5($_POST['password']);
+            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
             if ($this->Mcustomer->customer_login($username, $password) != FALSE) {
                 $row = $this->Mcustomer->customer_login($username, $password);
                 $this->session->set_userdata('sessionKhachHang', $row);
@@ -59,7 +59,7 @@ class Dangnhap extends CI_Controller
 
         $today = date('Y-m-d');
         // giới hạn mã giảm giá mới có hạn 30 ngày từ khi đăng ký tài khoản
-        $todaylimit = strtotime(date("Y-m-d", strtotime($today)) . " + 1 month");
+        $todaylimit = strtotime(date("Y-m-d", strtotime($today)) . " + a month");
         $todaylimit = strftime("%Y-%m-%d", $todaylimit);
 
         $this->load->library('form_validation');
@@ -82,7 +82,7 @@ class Dangnhap extends CI_Controller
                 'email'    => $this->input->post('email'),
                 'phone'    => $this->input->post('phone'),
                 'created' => $today,
-                'password' => md5($this->input->post('password'))
+                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
             );
 
             $newcoupon = array(
@@ -124,7 +124,7 @@ class Dangnhap extends CI_Controller
             $this->email->from('ducthangdt0@gmail.com', 'PTITFOOD');
             $this->email->to($email);
             $this->email->subject('PTITFOOD - Quà thành viên mới');
-            $this->email->message('Bạn đã trở thành thành viên mới của cửa hàng PTITFOOD, Cửa hàng tặng bạn 1 mã giảm giá giảm 100.000 đ : ' . $tempcoupon . ' , Mã này có giá trị tới ngày ' . $tempdatelimit . '
+            $this->email->message('Bạn đã trở thành thành viên mới của PTITFOOD, căn tin tặng bạn 1 mã giảm giá giảm 100.000 VNĐ : ' . $tempcoupon . ' , Mã này có giá trị tới ngày ' . $tempdatelimit . '
                 Hãy sử dụng tài khoản để mua hàng để tích lũy nhận thêm nhiều ưu đãi !!!!');
             $this->email->send();
             $this->data['success'] = 'Đăng ký thành công! Bạn đã nhận được 1 mã giảm giá cho thành viên mới, vui lòng kiểm tra email !!';
@@ -192,7 +192,6 @@ class Dangnhap extends CI_Controller
     {
         $email = $this->input->post('email');
         if ($this->Mcustomer->customer_detail_email($email)) {
-
             return TRUE;
         } else {
             $this->form_validation->set_message(__FUNCTION__, 'Email chưa này chưa được đăng ký!');
@@ -212,7 +211,7 @@ class Dangnhap extends CI_Controller
         if ($this->form_validation->run() == TRUE) {
             $email = $_POST['email'];
             if ($this->Mcustomer->customer_check_id_email($id, $email) != FALSE) {
-                $password_new = md5($_POST['re_password']);
+                $password_new = password_hash($_POST['re_password'], PASSWORD_DEFAULT);
                 $mydata = array('password' => $password_new,);
                 $this->Mcustomer->customer_update($mydata, $list['id']);
                 $this->data['success'] = 'Đổi mật khẩu thành công';

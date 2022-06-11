@@ -9,7 +9,7 @@ class Trangchu extends CI_Controller {
         $this->load->model('frontend/Mcategory');
         $this->load->model('frontend/Mslider');
         $this->load->model('frontend/Mcontent');
-        $this->load->model('frontend/Mslider');
+        // $this->load->model('frontend/Mslider');
         $this->data['com']='trangchu';
     }
     

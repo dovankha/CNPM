@@ -45,14 +45,14 @@ class Sliders extends CI_Controller {
 		if ($this->form_validation->run() == TRUE) 
 		{
 			$mydata= array(
-				'name' =>$_POST['name'],
+				'name' =>htmlspecialchars($_POST['name']),
 				'link' =>$string=$this->alias->str_alias($_POST['name']),
 				'created'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,
 				'modified_by'=>$this->session->userdata('id'),
 				'trash'=>1,
-				'status'=>$_POST['status']
+				'status'=>htmlspecialchars($_POST['status'])
 			);
 			$config['upload_path']          = './public/images/banners/';
 			$config['allowed_types']        = 'gif|jpg|png';

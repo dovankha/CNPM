@@ -126,14 +126,6 @@ border-radius:5px;
 </style>
 <script>
 
-
- 
-  
-    
-  
-    
-
-
 let section = document.querySelectorAll(".box_scoll");
     let menu = document.querySelectorAll(".ptitfood-info .info-list li a");
 

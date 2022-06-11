@@ -42,9 +42,9 @@ class Producer extends CI_Controller {
 		$this->form_validation->set_rules('keyword', 'Từ khóa', 'required');
 		if ($this->form_validation->run() == TRUE){
 			$mydata= array(
-				'name' =>$_POST['name'], 
-				'code'=>$_POST['code'], 
-				'keyword'=>$_POST['keyword'], 
+				'name' =>htmlspecialchars($_POST['name']), 
+				'code'=>htmlspecialchars($_POST['code']), 
+				'keyword'=>htmlspecialchars($_POST['keyword']), 
 				'created_at'=>$today,
 				'created_by'=>$this->session->userdata('id'),
 				'modified'=>$today,

@@ -1,11 +1,10 @@
 <?php
 ini_set("display_errors","off");
 ?>
-<?php echo 	('admin/coupon/insert'); ?>
 <div class="content-wrapper">
 	<form action="<?php echo base_url() ?>admin/coupon/insert.html" enctype="multipart/form-data" method="POST" accept-charset="utf-8">
 		<section class="content-header">
-			<h1><i class="glyphicon glyphicon-text-background"></i> Thêm mã giảm giá mới</h1>
+			<h1><i class="glyphicon glyphicon-text-background"></i>Thêm mã giảm giá mới</h1>
 			<?php  if($this->session->flashdata('error')):?>
 								<div class="row">
 									<div class="alert alert-success">
