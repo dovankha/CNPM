@@ -7,7 +7,8 @@ ini_set("display_errors","off");
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-12">
 			<form action="" accept-charset="UTF-8" action="" id="reset_password" method="post">
-				<div id="login">
+				<div id="login"style="background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));">
+			
 					<div class="acctitle acctitlec">Đổi mật khẩu</div>
 					<?php 
 					if(isset($success))
@@ -39,3 +40,18 @@ ini_set("display_errors","off");
 		</div>
 	</div>
 </div>
+<style>
+	#login{
+		padding:50px 100px;
+		border-radius:20px;
+		
+	}
+	#login input{
+		border-radius:20px;
+
+	}
+	#login button#login-form-submit{
+		border:1px solid black;
+		border-radius:20px;
+	}
+</style>

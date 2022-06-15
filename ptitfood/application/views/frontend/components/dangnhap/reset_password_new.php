@@ -1,13 +1,19 @@
 <?php
 ini_set("display_errors","off");
 ?>
+<style>
+	.ggg{
+		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+	}
+</style>
 <div class="container">
 	<div class="row">
 		<div class="col-md-3 col-sm-3 hidden-xs">
 		</div>
 		<div class="col-md-6 col-sm-6 col-xs-12">
 			<form action="" accept-charset="UTF-8" action="" id="reset_password" method="post">
-				<div id="login">
+				<div id="login"style="background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));">
+
 					<div class="acctitle acctitlec">Lấy lại mật khẩu</div>
 					<?php 
 					if(isset($success))

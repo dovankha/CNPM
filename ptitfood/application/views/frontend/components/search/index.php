@@ -32,6 +32,7 @@ ini_set("display_errors","off");
 
 .recommend-prod .owl-stage-outer{
     padding:20px;
+   
 }
 .product-lt .img-p{
     border-radius:30% 0 30% 0;

@@ -84,7 +84,9 @@ ini_set("display_errors","off");
    
 }
 .lt-product-group-image a{
-    display:inline-block;
+	display: block;
+    width: 100%;
+    height: 100%;
 }
 .lt-product-group-info h3{
     text-align: center;

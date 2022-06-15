@@ -27,7 +27,7 @@ ini_set("display_errors","off");
                         <ul class="menu">
                           <li>
                             <a href="#">
-                              <i class="fa fa-users text-aqua"></i>
+                              <i class="fa fa-users text-aqua"></i><a href="<?php echo base_url() ?>admin/orders">
                               <?php echo $this->Morders->orders_count_header_not();?> 
                               Đơn hàng chưa duyệt
                           </a>
@@ -37,9 +37,8 @@ ini_set("display_errors","off");
               <li>
                 <ul class="menu">
                   <li>
-                    <a href="#">
-                      <i class="fa fa-users text-aqua"></i> 
-                      <?php echo $this->Morders->orders_count_header();?> 
+                      <i class="fa fa-users text-aqua"></i> <a href="<?php echo base_url() ?>admin/orders">
+                      <?php echo $this->Morders->orders_count_header();?>
                       Đơn hàng đang giao
                   </a>
               </li>

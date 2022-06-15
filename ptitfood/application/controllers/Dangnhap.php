@@ -59,7 +59,7 @@ class Dangnhap extends CI_Controller
 
         $today = date('Y-m-d');
         // giới hạn mã giảm giá mới có hạn 30 ngày từ khi đăng ký tài khoản
-        $todaylimit = strtotime(date("Y-m-d", strtotime($today)) . " + a month");
+        $todaylimit = strtotime(date("Y-m-d", strtotime($today)) . " + 1 month");
         $todaylimit = strftime("%Y-%m-%d", $todaylimit);
 
         $this->load->library('form_validation');
@@ -79,10 +79,10 @@ class Dangnhap extends CI_Controller
             $data = array(
                 'username'     => $this->input->post('username'),
                 'fullname'     => $this->input->post('name'),
-                'email'    => $this->input->post('email'),
-                'phone'    => $this->input->post('phone'),
-                'created' => $today,
-                'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
+                'email'        => $this->input->post('email'),
+                'phone'        => $this->input->post('phone'),
+                'created'      => $today,
+                'password'     => password_hash($this->input->post('password'), PASSWORD_DEFAULT)
             );
 
             $newcoupon = array(
@@ -114,7 +114,7 @@ class Dangnhap extends CI_Controller
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
             $config['smtp_user']    = 'ducthangdt0@gmail.com';
-            $config['smtp_pass']    = 'aconkien123';
+            $config['smtp_pass']    = 'saseeaxcdbryxwco';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;
@@ -169,7 +169,7 @@ class Dangnhap extends CI_Controller
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
             $config['smtp_user']    = 'ducthangdt0@gmail.com';
-            $config['smtp_pass']    = 'aconkien123';
+            $config['smtp_pass']    = 'saseeaxcdbryxwco';
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";
             $config['wordwrap'] = TRUE;

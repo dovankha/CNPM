@@ -8,13 +8,13 @@ ini_set("display_errors","off");
                 <div class="general__title">
                     <h2><span>Thông tin tài khoản</span></h2>
                 </div>
-                <div class="block-content">
+                <div class="block-content" style="line-height:2;">
                     <p>Tài khoản: <strong><?php echo $info['username'] ?></strong></p>
                     <p>Họ và tên: <strong><?php echo $info['fullname'] ?></strong></p>
                     <p>Email: <strong><?php echo $info['email'] ?></strong></p>
                     <p>Số điện thoại: <strong><?php echo $info['phone'] ?></strong></p>
                 </div>
-                <button class="btn"><a href="reset_password">Đổi mật khẩu</a></button>
+                <button style="color:red;background:gray;padding:5px;border-radius:20px;margin-top:20px;" class="btn"><a href="reset_password" >Đổi mật khẩu</a></button>
             </div>
         </aside>
         <div class="col-main col-md-9 col-sm-12">
@@ -126,3 +126,12 @@ ini_set("display_errors","off");
     </div>
 </div>
 </section>
+<style>
+    .account{
+
+        background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+        border-radius:20px;
+        padding:30px;
+}
+    
+</style>

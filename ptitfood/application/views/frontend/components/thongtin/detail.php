@@ -34,7 +34,7 @@ ini_set("display_errors","off");
 			<div class="general__title">
 				<h3>Thông tin thanh toán</h3>
 			</div>
-			<div class="content-order">
+			<div class="content-order" style="line-height:2;">
 				<p> Mã Đơn hàng: <?php echo $info['orderCode'] ?></p>
 				<p> Khách hàng: <?php echo $info['fullname'] ?></p>
 				<p> Số điện thoại: <?php echo $info['phone'] ?></p>
@@ -71,16 +71,24 @@ ini_set("display_errors","off");
 						}
 
 						?>
-						<tr>
-							<td> Tổng thanh toán:</td>
-							<td class="text-right"><span style="color: red; font-size: 23px;"><?php echo number_format($info['money']) ?> VNĐ</span></td>
+						<tr >
+							<td > Tổng thanh toán:</td>
+							<td class="text-right"><span style="color: white; font-size: 23px;"><?php echo number_format($info['money']) ?> VNĐ</span></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
-		<div class="col-xs-12">
-			<button class="btn"><a href="javascript:;" onclick="window.history.go(-1);" class="viewMore pull-left" style="font-size: 15px;"><i class="fa fa-angle-left" aria-hidden="true"></i> Trở về trang trước</a></button>
+		<div class="col-xs-12" >
+			<button style="background:gray;border-radius:20px;margin-bottom:10px;border:1px solid white;" class="btn"><a href="javascript:;" onclick="window.history.go(-1);" class="viewMore pull-left" style="font-size: 15px;"><i class="fa fa-angle-left" aria-hidden="true"></i> Trở về trang trước</a></button>
 		</div>
 	</div>
 </div>
+<style>
+	.order-page{
+		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+		border-radius:20px;
+		padding:30px;
+	}
+	
+</style>

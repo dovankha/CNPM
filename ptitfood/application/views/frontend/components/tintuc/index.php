@@ -10,7 +10,7 @@ ini_set("display_errors","off");
       </div>
     </div>
   </div>
- <div class="container "reveal fade-bottom active" style="margin-top:24px;">
+ <div class="container reveal fade-bottom active" style="margin-top:24px;">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 list-menu pull-left">
                     <?php $this->load->view('frontend/modules/category'); ?> 
@@ -24,12 +24,12 @@ ini_set("display_errors","off");
                         <div class="fs-ne2-it clearfix">
                             <div class="fs-ne2-if">
                                 <a class="fs-ne2-img" href="tin-tuc/<?php echo $item['alias']; ?>">
-                                    <img  src="public/images/posts/<?php echo $item['img']; ?>"">
+                                    <img style="border-radius:20px;margin-right: 73px;" src="public/images/posts/<?php echo $item['img']; ?>"">
                                 </a>
                                 <div class="fs-n2-info">
                                     <h3><a class="fs-ne2-tit" href="tin-tuc/<?php echo $item['alias']; ?>" title=""><?php echo $item['title']; ?></a></h3>
                                     <div class="fs-ne2-txt"><?php echo $item['introtext']; ?></div>
-                                    <p class="fs-ne2-bot">
+                                    <p style="color:aqua;" class="fs-ne2-bot">
                                         <span class="fs-ne2-user">
                                             <img class="lazy"src="" style="">
                                         </span> 

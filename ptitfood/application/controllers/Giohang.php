@@ -194,7 +194,7 @@ class Giohang extends CI_Controller
             $config['smtp_port']    = '465';
             $config['smtp_timeout'] = '7';
             $config['smtp_user']    = 'ducthangdt0@gmail.com';
-            $config['smtp_pass']    = 'aconkien123';
+            $config['smtp_pass']    = 'saseeaxcdbryxwco';
             // mk trên la mat khau dung dung cua gmail, có thể dùng gmail hoac mat khau. Tao mat khau ung dung de bao mat tai khoan
             $config['charset']    = 'utf-8';
             $config['newline']    = "\r\n";

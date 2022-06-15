@@ -14,8 +14,8 @@ class Search extends CI_Controller
 	public function index()
 	{
 		$this->load->library('phantrang');
-		$key = $_GET['search'];
-		// $key = htmlspecialchars($_GET['search']); // khoi bi xss
+		// $key = $_GET['search'];
+		$key = htmlspecialchars($_GET['search']); // khoi bi xss
 		$aurl = explode('/', uri_string());
 		$url = $aurl[0] . '?search=' . str_replace(' ', '+', $key);
 		$limit = 10;

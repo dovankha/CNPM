@@ -28,10 +28,21 @@ ini_set("display_errors","off");
 	
 </div>
 <style>
+    #reset_password{
+        background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
+
+border-radius:20px;
+
+    }
+    #reset_password input{
+        width:140%;
+        border-radius:20px;
+    }
+   
 	.btn_forget button{
 		background-image: linear-gradient(to right, rgb(100 169 197), rgb(224 51 75));
 border-radius:5px;
-border:1px solid black;
+border:1px solid black !important;
 	}
 </style>
 <style>

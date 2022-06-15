@@ -1278,6 +1278,12 @@ let section = document.querySelectorAll(".box_scoll");
     /* khuyen ma hot */
     .recommend-prod .owl-stage-outer {
         padding: 20px;
+        overflow: auto;
+    }
+
+    .recommend-prod .owl-stage-outer::-webkit-scrollbar{
+        width: 0px;
+        display: none;
     }
 
     .recommend-prod .owl-stage-outer .img-p {
